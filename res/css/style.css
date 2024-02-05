@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    height: 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: #444;
+    overflow: hidden;
+    height: 100px;
+    width: 100%;
+    
+    
+    
+}
+
+nav a {
+    color: white;
+    text-align: right;
+    text-decoration: none;
+    padding: 14px;
+    padding-top: 40px;
+    float: right;
+}
+
+nav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+section {
+    padding: 20px;
+}
+
+.main_text{
+    text-align: center;
+    display: flex;
+    background-color: white;
+    margin-bottom: 5%;
+}
+.puk1 .puk2 .puk3 .puk4{
+    margin: 
+}
+
+.second_text{
+    text-align: center;
+}
+.vyhodyb{
+    background-color: darkred;
+    
+}
+.vyhody{
+    color: white;
+    
+    display: flex;
+}
+.i1{
+    text-align: center;
+    background-color: darkred;
+}
+
+.i2{
+    padding-left: 30%;
+    padding-top: 5%;
+    background-color: white;
+
+}
+.sm{
+    padding-top: 10%;
+}
+
+
+
+footer {
+    background-color:black;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
