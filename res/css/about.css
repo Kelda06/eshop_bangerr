@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Anta&family=Bitter&display=swap");
+
+
 * {
   padding: 0;
   margin: 0;
@@ -52,35 +54,12 @@ nav a:hover {
   border-bottom: 3px solid white;
 }
 
-section {
-  padding: 20px;
-}
-
-.main_text {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
-  margin-bottom: 5%;
-}
-
-.main_text img {
-  margin: 0 2em;
-  height: 15em;
-  width: 15em;
-}
-
-.second_text {
- 
-}
-.vyhodyb {
-  background-color: darkred;
-}
-.vyhody {
+.container {
   color: white;
   height: 100%;
   display: flex;
 }
+
 .i1 {
   text-align: center;
   background-image: url("../img/pozadi.png");
@@ -89,6 +68,7 @@ section {
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;
+  width: 50%;
 }
 
 .i2 {
@@ -98,18 +78,3 @@ section {
   background-image: url("../img/pozadi2.png");
   background-size: cover;
 }
-.ipuk {
-}
-
-.sm {
-  padding-top: 10%;
-}
-
-footer {
-  background-color: black;
-  color: white;
-  padding: 10px;
-  text-align: center;
-}
-
-

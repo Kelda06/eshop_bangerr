@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Anta&family=Bitter&display=swap');
 
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: "Anta", sans-serif;
     margin: 0;
@@ -11,7 +17,7 @@ header {
     color: white;
     padding: 5px;
     text-align: center;
-    height: 20px;
+   
 }
 
 nav {
@@ -25,7 +31,7 @@ nav {
     
 }
 .logo {
-    background-image: url("../img/logo.avif");
+    background-image: url("../img/logo.png");
     background-size: contain;
     background-repeat: no-repeat;
     height: 100%;
@@ -56,8 +62,58 @@ nav a:hover {
     margin-top: 5%;
     margin-left: 5%;
 }
+.container{
+    display: flex;
+   
+    
+}
 
-.form
+.spoluprace, .formular{
+    flex: 1;
+    padding: 40px;
+}
+
+.formular h1{
+    text-align: center;
+}
+
+form {
+    margin: 0 auto;
+    max-width: 400px; 
+    padding: 20px;
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%; 
+    padding: 10px; 
+    margin-bottom: 15px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+}
+
+input[type="submit"] {
+    width: 100%; 
+    padding: 10px; 
+    background-color: #007bff; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3; 
+}
+
+.company{
+    padding-top: 10%
+}
+
+
 footer {
     background-color:black;
     color: white;
