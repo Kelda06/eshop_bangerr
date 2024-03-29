@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css2?family=Anta&family=Bitter&display=swap");
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Anta", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+
+header {
+  background-color: black;
+  color: white;
+  padding: 5px;
+  text-align: center;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: #333;
+  height: 70px;
+  align-items: center;
+}
+.logo {
+  background-image: url("../img/logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 20%;
+}
+
+.m1 {
+  margin-right: 10%;
+}
+
+nav a {
+  color: aliceblue;
+  text-decoration: none;
+  padding: 10px 20px;
+ 
+}
+
+nav a:hover {
+  border-bottom: 3px solid white;
+}
+
+section {
+  padding: 20px;
+}
+
+.container{
+    display: flex;
+    width: 100%;
+    height: 500px;
+    border-bottom: solid gray;
+    
+}
+
+.pic{
+    /*border: solid black;*/
+    width: 50%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    
+}
+.buy{  
+   /* border: solid black;*/
+    float: right;
+    width: 50%;
+    padding-top: 50px;
+    
+}
+
+.container2{
+  
+    height: 300px;
+    width: 450px;
+    /*border: solid black;*/
+    margin: 40px;  
+}
+
+.name{
+    font-size: 35px;
+}
+
+.price{
+   padding-top:70px; 
+   padding-right: 20px;
+   
+ }
+ 
+ .stav{
+     color: green;
+     padding-right: 20px;
+     font-size: 15px;
+ }
+ 
+
+
+ 
+ .CartButton {
+     background-color: red; 
+     border: none; 
+     color: white;
+     padding: 10px 20px; 
+     text-align: center; 
+     text-decoration: none; 
+     display: inline-block; 
+     font-size: 16px; 
+     margin: 4px 2px; 
+     cursor: pointer; 
+     border-radius: 10px; 
+     margin-right: 20px;  
+ }
+ 
+ .cart{
+     display: flex;
+     justify-content: space-between;
+     padding-left: 20%;
+     padding-right: 20%;
+     float: right;
+ }
+
+ .order{
+  /*border: solid black;*/
+  text-align: right;
+  height: 200px;
+ }
+
+ .text{
+  color: gray;
+ }
+
+ .container3{
+  
+  padding-top: 100px;
+  padding-left: 30px;
+  display: flex;
+  padding-right: 30px;
+  
+
+
+ }
+
+ .info{
+  /*border: solid black;*/
+  width: 50%;
+ }
+
+ .parameters{
+  /*border: solid black; */
+  width: 50%;
+  padding-left: 100px;
+  
+ }
+
+ .par{
+  border-bottom: 0.5px solid gray;
+ }
+
+ .pargap{
+ float: right;
+ margin-right: 30px;
+
+ }
+
+ .container4{
+  padding-top: 60px;
+  padding-left: 30px;
+  padding-right: 30px;
+  /*border: solid black;*/
+  display: flex;
+  }
+
+ .man_text{
+  margin-bottom: 60px;
+ }
+
+  
+ .manual{
+  /*border: solid black;*/
+  
+ }
+ 
+ .help{
+  padding-left: 80px;
+ }
+ .help_t{
+  border-bottom: 0.5px solid gray;
+ }
+
+ .whatsapp-chat {
+  position: fixed;
+  right: 20px; /* Nastavte umístění podle potřeby */
+  bottom: 20px; /* Nastavte umístění podle potřeby */
+  z-index: 1000; /* Aby byl odkaz vždy viditelný */
+}
+
+.whatsapp-chat a {
+  display: inline-block;
+  background-color: #25d366; /* Barva WhatsApp */
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 16px;
+}
+
+ footer {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  
+
+ 

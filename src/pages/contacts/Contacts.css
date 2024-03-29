@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Anta&family=Bitter&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Anta", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+   
+}
+header {
+    background-color: black;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    width: 1265px
+   
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: #333;
+    height: 70px;
+    align-items: center;
+    
+    
+}
+.logo {
+    background-image: url("../img/logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 20%;
+}
+
+.m1{
+    margin-right: 10%;
+    
+}
+
+nav a {
+    color: aliceblue;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition-duration: 1s;
+}
+
+
+nav a:hover {
+   
+    border-bottom: 5px solid white;
+    
+    
+}
+
+.main_text1{
+    margin-top: 5%;
+    margin-left: 5%;
+}
+.container{
+    display: flex;
+   
+    
+}
+
+.spoluprace, .formular{
+    flex: 1;
+    padding: 40px;
+}
+
+.formular h1{
+    text-align: center;
+}
+
+form {
+    margin: 0 auto;
+    max-width: 400px; 
+    padding: 20px;
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%; 
+    padding: 10px; 
+    margin-bottom: 15px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+}
+
+input[type="submit"] {
+    width: 100%; 
+    padding: 10px; 
+    background-color: #007bff; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3; 
+}
+
+.company{
+    padding-top: 10%
+}
+
+.whatsapp-chat {
+    position: fixed;
+    right: 20px; /* Nastavte umístění podle potřeby */
+    bottom: 20px; /* Nastavte umístění podle potřeby */
+    z-index: 1000; /* Aby byl odkaz vždy viditelný */
+  }
+  
+  .whatsapp-chat a {
+    display: inline-block;
+    background-color: #25d366; /* Barva WhatsApp */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 16px;
+  }
+
+footer {
+    background-color:black;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+
+
+  
