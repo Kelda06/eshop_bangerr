@@ -8,7 +8,7 @@ export default function Products() {
         <div class="bar">
           Doprava <strong>zdarma</strong> při nákupu v hodnotě 1500 Kč
         </div>
-      </header>
+      
 
       <nav>
         <div class="logo"></div>
@@ -30,6 +30,9 @@ export default function Products() {
             </Link>
         </div>
       </nav>
+      </header>
+      
+      
       <h1 class="main_text">NAŠE PRODUKTY</h1>
       <h3 class="second_text">
         <span>

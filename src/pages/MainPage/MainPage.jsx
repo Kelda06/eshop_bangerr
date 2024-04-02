@@ -9,10 +9,12 @@ export default function MainPage() {
         <div class="bar">
           Doprava <strong>zdarma</strong> při nákupu v hodnotě 1500 Kč
         </div>
-      </header>
+      
 
       <nav>
-        <div class="logo"></div>
+        <div class="logo">  <img src="../img/logo.png" width="40px" height="40px"
+          alt="pozadi"/>   
+          </div>
         <div class="m1">
         <Link to={"/"}>
             <a>Domov</a>
@@ -31,12 +33,13 @@ export default function MainPage() {
             </Link>
         </div>
       </nav>
+      </header>
 
       <div class="mainp">
         <img
           src="../img/uvodni.png"
-          width="100%"
-          height="100%"
+          width="1263px"
+          height="600px"
           alt="pozadi"
         />
       </div>

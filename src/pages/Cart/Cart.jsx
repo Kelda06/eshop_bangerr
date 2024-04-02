@@ -8,7 +8,7 @@ export default function Cart(){
         <div class="bar">
             Doprava <strong>zdarma</strong> při nákupu v hodnotě 1500 Kč
         </div>
-    </header>
+    
  
     
     <nav>
@@ -31,7 +31,8 @@ export default function Cart(){
             </Link>
         </div>
         
-    </nav> 
+    </nav>
+    </header>
 
     <h1>Pokladna</h1>
     <form action="/submit-your-form-here" method="post">

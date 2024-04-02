@@ -17,6 +17,7 @@ header {
   color: white;
   padding: 5px;
   text-align: center;
+  position: fixed;
 }
 
 nav {
@@ -26,15 +27,15 @@ nav {
   background-color: #333;
   height: 70px;
   align-items: center;
-  position: fixed;
+  padding: 0%;
   z-index: 1000;
 }
-.logo {
-  background-image: url("../img/logo.png");
+.logo{
+ 
   background-size: contain;
   background-repeat: no-repeat;
-  height: 100%;
-  width: 20%;
+  height: 10px;
+  width: 10px;
 }
 
 .m1 {

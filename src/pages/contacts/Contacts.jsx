@@ -7,6 +7,7 @@ export default function Contacts() {
       <header>
         <div class="bar">Máte dotazy? Neváhejte nás kontaktovat!</div>
       </header>
+      <main>
 
       <nav>
         <div class="logo"></div>
@@ -57,7 +58,7 @@ export default function Contacts() {
         <div class="spoluprace">
           <h1 class="main_text2">VELKOOBCHODNÍ SPOLUPRÁCE</h1>
           <div>
-            Chcete od nás nakupovat za <strong>velkoobchodní ceny?</strong>{" "}
+            Chcete od nás nakupovat za <strong>velkoobchodní ceny?</strong>
           </div>
           <br></br>
           <div>
@@ -71,13 +72,11 @@ export default function Contacts() {
           <div class="company">
             <img src="../img/logo_shocaff.png" width="100%" height="100%" />
             <img
-              src="../img/logo_energain.png"
-              width="100%"
-              height="100%"
-            />
+              src="../img/logo_energain.png" width="100%" height="100%" />
           </div>
         </div>
       </div>
+      </main>
 
       <footer>&copy; 2023 Energain s.r.o.</footer>
 

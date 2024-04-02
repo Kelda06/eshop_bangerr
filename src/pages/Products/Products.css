@@ -60,13 +60,16 @@ nav a:hover {
     
 }
 
+
 .main_text{
     text-align: center;
     padding: 20px;
+    color: black;
 }
 .second_text{
     text-align: center;
-    opacity: 0.5
+    opacity: 0.5;
+    color: black;
 }
 .products1{
     display: flex;
