@@ -1,37 +1,16 @@
 import { Link } from "react-router-dom";
 import "./Contacts.css"
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Header/Footer/Footer";
 
 export default function Contacts() {
   return (
+   
     <>
-      <header>
-        <div class="bar">Máte dotazy? Neváhejte nás kontaktovat!</div>
-      </header>
-      <main>
-
-      <nav>
-        <div class="logo"></div>
-        <div class="m1">
-        <Link to={"/"}>
-            <a>Domov</a>
-            </Link>
-            <Link to={"/products"}>
-            <a>Naše produkty</a>
-            </Link>
-            <Link to={"/about"}>
-            <a>Co je to SHOCAFF?</a>
-            </Link>
-            <Link to={"/contacts"}>
-            <a>Kontakty</a>
-            </Link>
-            <Link to={"/"}>
-            <a>Instagram</a>
-            </Link>
-            <Link to={"/cart"}>
-            <a>Košík</a>
-            </Link>
-        </div>
-      </nav>
+      
+      <Header></Header>
+      <div id="contacts">
+      
 
       <div class="container">
         <div class="formular">
@@ -76,15 +55,13 @@ export default function Contacts() {
           </div>
         </div>
       </div>
-      </main>
 
-      <footer>&copy; 2023 Energain s.r.o.</footer>
-
-      <div class="whatsapp-chat">
-        <a href="https://wa.me/420725828088" target="_blank">
-          Chatujte s námi na WhatsApp
-        </a>
       </div>
+      
+
+      <Footer></Footer>
+      
     </>
+    
   );
 }

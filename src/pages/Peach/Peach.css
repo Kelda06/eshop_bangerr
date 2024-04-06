@@ -1,62 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Anta&family=Bitter&display=swap");
 
 
-* {
+#Peach * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-body {
+#Peach body {
   font-family: "Anta", sans-serif;
   margin: 0;
   padding: 0;
   background-color: white;
 }
 
-header {
-  background-color: black;
-  color: white;
-  padding: 5px;
-  text-align: center;
-}
 
-nav {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  background-color: #333;
-  height: 70px;
-  align-items: center;
-}
-.logo {
-  background-image: url("../img/logo.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 100%;
-  width: 20%;
-}
 
-.m1 {
-  margin-right: 10%;
-}
-
-nav a {
-  color: aliceblue;
-  text-decoration: none;
-  padding: 10px 20px;
- 
-}
-
-nav a:hover {
-  border-bottom: 3px solid white;
-}
-
-section {
+#Peach section {
   padding: 20px;
 }
 
-.container{
+#Peach .container{
     display: flex;
     width: 100%;
     height: 500px;
@@ -64,7 +28,7 @@ section {
     
 }
 
-.pic{
+#Peach .pic{
     /*border: solid black;*/
     width: 50%;
     justify-content: center;
@@ -72,7 +36,7 @@ section {
     align-items: center;
     
 }
-.buy{  
+#Peach .buy{  
    /* border: solid black;*/
     float: right;
     width: 50%;
@@ -80,7 +44,7 @@ section {
     
 }
 
-.container2{
+#Peach .container2{
   
     height: 300px;
     width: 450px;
@@ -88,17 +52,17 @@ section {
     margin: 40px;  
 }
 
-.name{
+#Peach .name{
     font-size: 35px;
 }
 
-.price{
+#Peach .price{
    padding-top:70px; 
    padding-right: 20px;
    
  }
  
- .stav{
+#Peach .stav{
      color: green;
      padding-right: 20px;
      font-size: 15px;
@@ -107,7 +71,7 @@ section {
 
 
  
- .CartButton {
+#Peach .CartButton {
      background-color: red; 
      border: none; 
      color: white;
@@ -122,7 +86,7 @@ section {
      margin-right: 20px;  
  }
  
- .cart{
+ #Peach.cart{
      display: flex;
      justify-content: space-between;
      padding-left: 20%;
@@ -130,17 +94,17 @@ section {
      float: right;
  }
 
- .order{
+ #Peach.order{
   /*border: solid black;*/
   text-align: right;
   height: 200px;
  }
 
- .text{
+ #Peach .text{
   color: gray;
  }
 
- .container3{
+ #Peach .container3{
   
   padding-top: 100px;
   padding-left: 30px;
@@ -151,29 +115,29 @@ section {
 
  }
 
- .info{
+ #Peach .info{
   /*border: solid black;*/
   width: 50%;
  }
 
- .parameters{
+ #Peach .parameters{
   /*border: solid black; */
   width: 50%;
   padding-left: 100px;
   
  }
 
- .par{
+ #Peach .par{
   border-bottom: 0.5px solid gray;
  }
 
- .pargap{
+ #Peach .pargap{
  float: right;
  margin-right: 30px;
 
  }
 
- .container4{
+ #Peach .container4{
   padding-top: 60px;
   padding-left: 30px;
   padding-right: 30px;
@@ -181,47 +145,17 @@ section {
   display: flex;
   }
 
- .man_text{
+  #Peach .man_text{
   margin-bottom: 60px;
  }
 
   
- .manual{
-  /*border: solid black;*/
-  
- }
+
  
- .help{
+ #Peach .help{
   padding-left: 80px;
  }
- .help_t{
+ #Peach .help_t{
   border-bottom: 0.5px solid gray;
  }
 
- .whatsapp-chat {
-  position: fixed;
-  right: 20px; /* Nastavte umístění podle potřeby */
-  bottom: 20px; /* Nastavte umístění podle potřeby */
-  z-index: 1000; /* Aby byl odkaz vždy viditelný */
-}
-
-.whatsapp-chat a {
-  display: inline-block;
-  background-color: #25d366; /* Barva WhatsApp */
-  color: white;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 50px;
-  font-size: 16px;
-}
-
- footer {
-    background-color: black;
-    color: white;
-    padding: 10px;
-    text-align: center;
-  }
-  
-  
-
- 

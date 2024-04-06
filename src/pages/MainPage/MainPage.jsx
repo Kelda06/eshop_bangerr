@@ -1,39 +1,16 @@
 import "./MainPage.css";
-import Content from "../../components/MainPage/Content";
 import { Link } from "react-router-dom";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Header/Footer/Footer";
 
 export default function MainPage() {
   return (
     <>
-      <header>
-        <div class="bar">
-          Doprava <strong>zdarma</strong> při nákupu v hodnotě 1500 Kč
-        </div>
-      
+    <div id="MainPage">
 
-      <nav>
-        <div class="logo">  <img src="../img/logo.png" width="40px" height="40px"
-          alt="pozadi"/>   
-          </div>
-        <div class="m1">
-        <Link to={"/"}>
-            <a>Domov</a>
-            </Link>
-            <Link to={"/products"}>
-            <a>Naše produkty</a>
-            </Link>
-            <Link to={"/about"}>
-            <a>Co je to SHOCAFF?</a>
-            </Link>
-            <Link to={"/contacts"}>
-            <a>Kontakty</a>
-            </Link>
-            <Link to={"/"}>
-            <a>Instagram</a>
-            </Link>
-        </div>
-      </nav>
-      </header>
+   <Header></Header>
+   
+      
 
       <div class="mainp">
         <img
@@ -107,13 +84,10 @@ export default function MainPage() {
         </div>
       </div>
 
-      <div class="whatsapp-chat">
-        <a href="https://wa.me/420725828088" target="_blank">
-          Chatujte s námi na WhatsApp
-        </a>
-      </div>
 
-      <footer>&copy; 2023 Energain s.r.o.</footer>
+
+      <Footer></Footer>
+      </div>
     </>
   );
 }

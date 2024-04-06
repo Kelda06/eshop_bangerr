@@ -11,7 +11,12 @@ import Contacts from "./Contacts/Contacts";
 import Grape from "./Grape/Grape";
 import Lemon from "./Lemon/Lemon";
 import Mint from "./Mint/Mint";
+import Peach from "./Peach/Peach"
 import Products from "./Products/Products";
+import Header from "../components/Header/Header";
+import Footer from "../components/Header/Footer/Footer";
+import ProductsPeach from "../components/Header/ProductsPeach/ProductsPeach"
+
 
 
 export default function AppRoutes() {
@@ -31,7 +36,12 @@ export default function AppRoutes() {
           <Route path="/grape" element={<Grape />} />
           <Route path="/lemon" element={<Lemon />} />
           <Route path="/mint" element={<Mint />} />
+          <Route path="/peach" element={<Peach />} />
           <Route path="/products" element={<Products />} />
+          <Route path="/header" element={<Header />} />
+          <Route path="/footer" element={<Footer />} />
+          <Route path="/productsPeach" element={<ProductsPeach />} />
+
         </Routes>
       </BrowserRouter>
     </>

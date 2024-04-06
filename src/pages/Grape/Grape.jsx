@@ -4,6 +4,7 @@ import "./Grape.css"
 export default function Grape() {
   return (
     <>
+    <div id="grape">
       <header>
         <div class="bar">
           Doprava <strong>zdarma</strong> při nákupu v hodnotě 1500 Kč
@@ -59,6 +60,7 @@ export default function Grape() {
         </div>
       </div>
       <footer>&copy; 2023 Energain s.r.o.</footer>
+      </div>
     </>
   );
 }

@@ -1,38 +1,15 @@
 import { Link } from "react-router-dom"
 import "./Cart.css"
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Header/Footer/Footer";
+
 
 export default function Cart(){
     return(
         <>
-        <header>
-        <div class="bar">
-            Doprava <strong>zdarma</strong> při nákupu v hodnotě 1500 Kč
-        </div>
-    
- 
-    
-    <nav>
-        <div class="logo"></div>
-        <div class="m1"> 
-        <Link to={"/"}>
-            <a>Domov</a>
-            </Link>
-            <Link to={"/products"}>
-            <a>Naše produkty</a>
-            </Link>
-            <Link to={"/about"}>
-            <a>Co je to SHOCAFF?</a>
-            </Link>
-            <Link to={"/contacts"}>
-            <a>Kontakty</a>
-            </Link>
-            <Link to={"/"}>
-            <a>Instagram</a>
-            </Link>
-        </div>
         
-    </nav>
-    </header>
+        <Header></Header>
+        <div id="cart">
 
     <h1>Pokladna</h1>
     <form action="/submit-your-form-here" method="post">
@@ -78,11 +55,11 @@ export default function Cart(){
             <p>Celkově: <span id="total">1100</span> Kč</p>
         </div>
     </div>
-    <script src="js/cart.js"></script>
+    <script src="js/Cart.js"></script>
 
-    <div class="whatsapp-chat">
-        <a href="https://wa.me/420725828088" target="_blank">Chatujte s námi na WhatsApp</a>
     </div>
+
+   <Footer></Footer>
         </>
     )
 }

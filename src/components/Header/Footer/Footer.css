@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Anta&family=Bitter&display=swap');
+
+
+
+
+.whatsapp-chat {
+    position: fixed;
+    right: 20px; /* Nastavte umístění podle potřeby */
+    bottom: 20px; /* Nastavte umístění podle potřeby */
+    z-index: 1000; /* Aby byl odkaz vždy viditelný */
+  }
+  
+  .whatsapp-chat a {
+    display: inline-block;
+    background-color: #25d366; /* Barva WhatsApp */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 16px;
+  }
+  
+  footer {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  
+  

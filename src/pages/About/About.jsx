@@ -1,35 +1,14 @@
 import "./About.css";
 import { Link } from "react-router-dom";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Header/Footer/Footer";
 
 export default function About() {
   return (
     <>
-      <header>
-        <div class="bar">
-          Doprava <strong>zdarma</strong> při nákupu v hodnotě 1500 Kč
-        </div>
-      </header>
 
-      <nav>
-        <div class="logo"></div>
-        <div class="m1">
-          <Link to={"/"}>
-            <a>Domov</a>
-          </Link>
-          <Link to={"/products"}>
-            <a>Naše produkty</a>
-          </Link>
-          <Link to={"/about"}>
-            <a>Co je to SHOCAFF?</a>
-          </Link>
-          <Link to={"/contacts"}>
-            <a>Kontakty</a>
-          </Link>
-          <Link to={"/"}>
-            <a>Instagram</a>
-          </Link>
-        </div>
-      </nav>
+    <Header></Header>
+    <div id="about">
 
       <div class="mainp">
         <img src="../img/uvodni.png" width="100%" height="100%" alt="pozadi" />
@@ -63,11 +42,11 @@ export default function About() {
         </div>
       </div>
 
-      <div class="whatsapp-chat">
-        <a href="https://wa.me/420725828088" target="_blank">
-          Chatujte s námi na WhatsApp
-        </a>
       </div>
+
+      <Footer></Footer>
+
+      
     </>
   );
 }

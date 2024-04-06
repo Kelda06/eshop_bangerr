@@ -1,38 +1,16 @@
 import { Link } from "react-router-dom";
 import "./Peach.css";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Header/Footer/Footer";
 
 export default function Peach() {
   return (
     <>
-      <header>
-        <div class="bar">
-          Doprava <strong>zdarma</strong> při nákupu v hodnotě 1500 Kč
-        </div>
-      </header>
+     
+     <Header></Header>
 
-      <nav>
-        <div class="logo"></div>
-        <div class="m1">
-        <Link to={"/"}>
-            <a>Domov</a>
-            </Link>
-            <Link to={"/products"}>
-            <a>Naše produkty</a>
-            </Link>
-            <Link to={"/about"}>
-            <a>Co je to SHOCAFF?</a>
-            </Link>
-            <Link to={"/contacts"}>
-            <a>Kontakty</a>
-            </Link>
-            <Link to={"/"}>
-            <a>Instagram</a>
-            </Link>
-            <Link to={"/cart"}>
-            <a>Košík</a>
-            </Link>
-        </div>
-      </nav>
+     <div id="Peach">
+
 
       <div class="container">
         <div class="pic">
@@ -144,14 +122,12 @@ export default function Peach() {
           <p>Tel: 725 828 088 ( Po - Pá: 7:00 - 16:00)</p>
           <p>E-mail: info@energain.cz</p>
         </div>
-
-        <div class="whatsapp-chat">
-          <a href="https://wa.me/420725828088" target="_blank">
-            Chatujte s námi na WhatsApp
-          </a>
-        </div>
       </div>
-      <footer>&copy; 2023 Energain s.r.o.</footer>
+
+      </div>
+
+      <Footer></Footer>
+      
     </>
   );
 }
