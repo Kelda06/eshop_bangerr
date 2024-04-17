@@ -5,14 +5,14 @@
 
 .whatsapp-chat {
     position: fixed;
-    right: 20px; /* Nastavte umístění podle potřeby */
-    bottom: 20px; /* Nastavte umístění podle potřeby */
-    z-index: 1000; /* Aby byl odkaz vždy viditelný */
+    right: 20px;  
+    bottom: 20px; 
+    z-index: 1000; 
   }
   
   .whatsapp-chat a {
     display: inline-block;
-    background-color: #25d366; /* Barva WhatsApp */
+    background-color: #25d366; 
     color: white;
     padding: 10px 20px;
     text-decoration: none;

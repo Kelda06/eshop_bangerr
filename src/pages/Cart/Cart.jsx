@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 import "./Cart.css"
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Header/Footer/Footer";
+import Cartjs from "./Cartjs";
 
 
 export default function Cart(){
@@ -55,7 +56,7 @@ export default function Cart(){
             <p>Celkově: <span id="total">1100</span> Kč</p>
         </div>
     </div>
-    <script src="js/Cart.js"></script>
+    <script src="js/Cartjs.js"></script>
 
     </div>
 

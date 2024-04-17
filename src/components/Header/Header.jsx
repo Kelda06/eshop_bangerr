@@ -2,6 +2,7 @@ import "./Header.css"
 import { Link } from "react-router-dom";
 
 
+
 export default function Header() {
     return(
         <>
@@ -11,10 +12,11 @@ export default function Header() {
         </div>
 
         </header>
-      
 
+       
       <nav>
         <div class="logo"></div>
+        
         <div class="m1">
             <Link to={"/"}>
             <a>Domov</a>
@@ -34,7 +36,9 @@ export default function Header() {
             
         </div>
       </nav>
+      
         </>
+     
 
     );
     

@@ -15,8 +15,8 @@ export default function MainPage() {
       <div class="mainp">
         <img
           src="../img/uvodni.png"
-          width="1263px"
-          height="600px"
+          width="100%"
+          height="100%"
           alt="pozadi"
         />
       </div>

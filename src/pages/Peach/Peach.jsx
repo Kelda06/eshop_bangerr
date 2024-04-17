@@ -52,6 +52,8 @@ export default function Peach() {
         </div>
       </div>
 
+      <div className="line"></div>
+
       <div class="container3">
         <div class="info">
           <p>
@@ -109,7 +111,7 @@ export default function Peach() {
             <h2>Jak používat SHOCAFF</h2>
           </div>
           <div class="manual_pic">
-            <img src="../img/pouziti.jpg" width="600px" alt="pouziti"></img>
+            <img src="../img/pouziti.jpg" width="70%%" alt="pouziti"></img>
           </div>
         </div>
 
@@ -119,8 +121,13 @@ export default function Peach() {
           </div>
           <br></br>
           <br></br>
-          <p>Tel: 725 828 088 ( Po - Pá: 7:00 - 16:00)</p>
-          <p>E-mail: info@energain.cz</p>
+          <div className="help_text">
+          <ul>
+            <li>Tel: 725 828 088 ( Po - Pá: 7:00 - 16:00)</li>
+            <br />
+            <li>E-mail: info@energain.cz</li>
+          </ul>
+          </div>
         </div>
       </div>
 

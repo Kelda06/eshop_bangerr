@@ -12,18 +12,21 @@ body {
   background-color: white;
 }
 
+
+
 .main_text {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: white;
   margin-bottom: 5%;
+  width: 100%;
 }
 
 .main_text img {
   margin: 0 2em;
-  height: 15em;
-  width: 15em;
+  height: 15.625rem;
+  width: 15.625rem;
 }
 
 .vyhodyb {

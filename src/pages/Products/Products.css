@@ -14,6 +14,15 @@
    
 }
 
+#products .mainp{
+   margin-top: 80px;
+
+}
+
+#products .text{
+    padding-top: 4rem;
+}
+
 #products .main_text{
     text-align: center;
     padding: 20px;
@@ -30,6 +39,17 @@
     
     
    
+}
+
+@media screen and (max-width: 600px) {
+    .products1, .products2 {
+        display: flex;
+        flex-direction: column; /* Bloky se budou umisťovat pod sebe */
+        align-items: center; /* Zarovnání na střed podle osy X */
+        justify-content: center; /* Zarovnání na střed podle osy Y */
+      }
+      
+
 }
 
 

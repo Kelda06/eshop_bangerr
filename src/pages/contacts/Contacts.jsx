@@ -35,7 +35,7 @@ export default function Contacts() {
         </div>
 
         <div class="spoluprace">
-          <h1 class="main_text2">VELKOOBCHODNÍ SPOLUPRÁCE</h1>
+          <h1>VELKOOBCHODNÍ SPOLUPRÁCE</h1>
           <div>
             Chcete od nás nakupovat za <strong>velkoobchodní ceny?</strong>
           </div>

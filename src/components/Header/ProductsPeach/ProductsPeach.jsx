@@ -11,7 +11,7 @@ export default function ProductsPeach() {
          <div class="container">
         <Link to={"/peach"}>
             <div class="p">
-              <img src="../img/peach.png" width="100%" height="100%" />
+              <img src="../img/peach.png" width="300px" height="300px" />
             </div>
             <p>SHOCAFF ICE PEACH 80 mg/g</p>
             <br></br>

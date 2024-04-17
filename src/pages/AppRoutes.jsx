@@ -16,6 +16,7 @@ import Products from "./Products/Products";
 import Header from "../components/Header/Header";
 import Footer from "../components/Header/Footer/Footer";
 import ProductsPeach from "../components/Header/ProductsPeach/ProductsPeach"
+import Cartjs from "../pages/Cart/Cartjs"
 
 
 
@@ -41,6 +42,7 @@ export default function AppRoutes() {
           <Route path="/header" element={<Header />} />
           <Route path="/footer" element={<Footer />} />
           <Route path="/productsPeach" element={<ProductsPeach />} />
+          <Route path="/cartjs" element={<Cartjs/>} />
 
         </Routes>
       </BrowserRouter>
