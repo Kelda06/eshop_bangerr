@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Anta&family=Bitter&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Anta", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  max-width: 100vw;
+}
+
+#Peach .mainp img{
+  margin-top: 100px;
+}
+
+
+
+#MainPage .gallery{
+  display: flex;
+}
+
+#MainPage .gallery img{
+  width: 20%;
+  margin: 2.5%;
+  
+}
+
+
+.vyhodyb {
+  background-color: darkred;
+}
+.vyhody {
+  color: white;
+  height: 100%;
+  display: flex;
+}
+.i1 {
+  text-align: center;
+  background-image: url("../img/pozadi.png");
+  background-size: cover;
+
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  width: 50%;
+  height: 25rem;
+}
+
+.i2 {
+  width: 50%;
+  height: 25rem;
+  background-color: white;
+  background-image: url("../img/pozadi2.png");
+  background-size: cover;
+ 
+}
+.ipuk img {
+  width: 30%;
+  height: 30%;
+  margin-top: 1.5625rem;
+  margin-left: 25%;
+}
+
+.sm {
+  padding-top: 10%;
+}
+
+@media screen and (max-width: 600px) {
+  .vyhody{
+    display: block;
+    width: 600px;
+  }
+
+  .i1{
+    width: max-content;
+  }
+
+  .i2{
+    width: max-content;
+  }
+}
+
+ 
+
+

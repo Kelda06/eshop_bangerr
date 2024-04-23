@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Anta&family=Bitter&display=swap');
+
+#contacts * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#contacts body {
+    font-family: "Anta", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+   
+}
+
+
+
+#contacts .main_text1{
+    margin-top: 5%;
+    margin-left: 5%;
+}
+#contacts .container{
+    display: flex;
+    
+    margin: 0;
+   
+    margin-top: 70px;
+   
+    
+}
+
+#contacts .spoluprace{
+    margin-left: 70px;
+}
+
+
+#contacts .spoluprace, .formular{
+    flex: 1;
+    padding-top: 40px;
+  
+    
+}
+
+#contacts .formular h1{
+    text-align: center;
+    padding-top: 40px;
+    font-size: 4vw;
+}
+
+#contacts .spoluprace h1{
+    text-align: center;
+    font-size: 4vw;
+}
+
+#contacts form {
+    margin: 0 auto;
+    max-width: 400px; 
+    padding: 20px;
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    margin-top: 40px;
+}
+
+#contacts input[type="text"],
+#contacts input[type="email"],
+#contacts textarea {
+    width: 100%; 
+    padding: 10px; 
+    margin-bottom: 15px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+}
+
+#contacts input[type="submit"] {
+    width: 100%; 
+    padding: 10px; 
+    background-color: #007bff; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+}
+
+#contacts input[type="submit"]:hover {
+    background-color: #0056b3; 
+}
+
+#contacts .company{
+    padding-top: 10%
+}
+
+#contacts .whatsapp-chat {
+    position: fixed;
+    right: 20px; /* Nastavte umístění podle potřeby */
+    bottom: 20px; /* Nastavte umístění podle potřeby */
+    z-index: 1000; /* Aby byl odkaz vždy viditelný */
+  }
+  
+#contacts .whatsapp-chat a {
+    display: inline-block;
+    background-color: #25d366; /* Barva WhatsApp */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 16px;
+  }
+
+#contacts footer {
+    background-color:black;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+
+@media screen and (max-width: 600px) {
+   #contacts .container {
+        display: flex;
+        flex-direction: column; /* Bloky se budou umisťovat pod sebe */
+        align-items: center; /* Zarovnání na střed podle osy X */
+        justify-content: center; /* Zarovnání na střed podle osy Y */
+   
+      }
+
+      #contacts .formular h1{
+        text-align: center;
+        padding-top: 40px;
+        font-size: 7vw;
+      }
+    
+      #contacts .spoluprace h1{
+        font-size: 7vw;
+      }
+
+      #contacts .spoluprace{
+        
+        padding-right: 70px ;
+        
+      }
+
+}
+  
