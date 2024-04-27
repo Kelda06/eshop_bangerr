@@ -7,7 +7,7 @@
 }
 
 #contacts body {
-    font-family: "Anta", sans-serif;
+   
     margin: 0;
     padding: 0;
     background-color: white;
@@ -25,26 +25,30 @@
     
     margin: 0;
    
-    margin-top: 70px;
+    margin-top: 0.625rem;
    
     
 }
 
 #contacts .spoluprace{
-    margin-left: 70px;
+    margin-left: 4.375rem;
 }
 
 
 #contacts .spoluprace, .formular{
     flex: 1;
-    padding-top: 40px;
+    padding-top: 1rem;
   
     
 }
 
+
+
+
+
 #contacts .formular h1{
     text-align: center;
-    padding-top: 40px;
+    padding-top: 1rem;
     font-size: 4vw;
 }
 
@@ -55,30 +59,30 @@
 
 #contacts form {
     margin: 0 auto;
-    max-width: 400px; 
-    padding: 20px;
-    border: 1px solid #ccc; 
-    border-radius: 5px; 
-    margin-top: 40px;
+    max-width: 25rem; 
+    padding: 1.25rem;
+    border: 0.0625rem solid #ccc; 
+    border-radius: 0.3125rem; 
+    margin-top: 2.5rem;
 }
 
 #contacts input[type="text"],
 #contacts input[type="email"],
 #contacts textarea {
     width: 100%; 
-    padding: 10px; 
-    margin-bottom: 15px; 
-    border: 1px solid #ccc; 
-    border-radius: 5px; 
+    padding: 0.625rem; 
+    margin-bottom: 0.9375rem; 
+    border: 0.0625rem solid #ccc; 
+    border-radius: 0.3125rem; 
 }
 
 #contacts input[type="submit"] {
     width: 100%; 
-    padding: 10px; 
+    padding: 0.625rem; 
     background-color: #007bff; 
     color: white; 
     border: none; 
-    border-radius: 5px; 
+    border-radius: 0.3125rem; 
     cursor: pointer; 
 }
 
@@ -92,8 +96,8 @@
 
 #contacts .whatsapp-chat {
     position: fixed;
-    right: 20px; /* Nastavte umístění podle potřeby */
-    bottom: 20px; /* Nastavte umístění podle potřeby */
+    right: 1.25rem; /* Nastavte umístění podle potřeby */
+    bottom: 1.25rem; /* Nastavte umístění podle potřeby */
     z-index: 1000; /* Aby byl odkaz vždy viditelný */
   }
   
@@ -101,16 +105,16 @@
     display: inline-block;
     background-color: #25d366; /* Barva WhatsApp */
     color: white;
-    padding: 10px 20px;
+    padding: 0.625rem 1.25rem;
     text-decoration: none;
-    border-radius: 50px;
-    font-size: 16px;
+    border-radius: 3.125rem;
+    font-size: 1rem;
   }
 
 #contacts footer {
     background-color:black;
     color: white;
-    padding: 10px;
+    padding: 0.625rem;
     text-align: center;
 }
 
@@ -124,9 +128,15 @@
    
       }
 
+      #contacts .line{
+        border-top: 0.0313rem solid gray;
+        margin-top: 3.125rem;
+        width: 90%;
+    }
+
       #contacts .formular h1{
         text-align: center;
-        padding-top: 40px;
+        padding-top: 2.5rem;
         font-size: 7vw;
       }
     
@@ -136,7 +146,7 @@
 
       #contacts .spoluprace{
         
-        padding-right: 70px ;
+        padding-right: 4.375rem ;
         
       }
 

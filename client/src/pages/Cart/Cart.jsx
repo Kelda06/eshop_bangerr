@@ -35,14 +35,14 @@ export default function Cart(){
         <input type="submit" value="Odeslat"></input>
     </form>
 
-    <div class="order">
-        <div class="product">
+    <div className="order">
+        <div className="product">
             <h2>Vybraný Produkt</h2>
             <p>Název: <span id="productName">Název Produktu</span></p>
             <p>Cena: <span id="productPrice">1000</span> Kč</p>
         </div>
 
-        <div class="shipping">
+        <div className="shipping">
             <h2>Výběr Dopravy</h2>
             <select id="shippingMethod" onchange="updateTotal()">
                 <option value="100">Standardní - 100 Kč</option>
@@ -51,7 +51,7 @@ export default function Cart(){
             </select>
         </div>
 
-        <div class="summary">
+        <div className="summary">
             <p>Mezisoučet: <span id="subtotal">1000</span> Kč</p>
             <p>Celkově: <span id="total">1100</span> Kč</p>
         </div>

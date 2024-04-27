@@ -8,7 +8,7 @@
   }
 
   #cart body {
-  font-family: "Anta", sans-serif;
+
   margin: 0;
   padding: 0;
   background-color: white;
@@ -31,11 +31,11 @@
 #cart form {
     
     background-color: #ffffff;
-    padding: 40px;
-    margin-left: 130px;
-    margin-right: 130px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px black;
+    padding: 2.5rem;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0.625rem black;
   
 }
 
@@ -54,7 +54,7 @@
     margin-bottom: 20px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    box-sizing: border-box; /* makes padding included in the width */
+    box-sizing: border-box; 
 }
 
 #cart input[type="submit"] {

@@ -10,35 +10,26 @@ export default function About() {
     <Header></Header>
     <div id="about">
 
-      <div class="mainp">
+      <div className="mainp">
         <img src="../img/uvodni.png" width="100%" height="100%" alt="pozadi" />
       </div>
 
-      <div class="container">
-        <div class="i1">
-          <h2>
-            Co je to <strong>SHOCAFF</strong>
-          </h2>
-          <p>
-            Se Scooper Energy získáte dokonalého společníka pro dlouhotrvající
-            energii, bez nevýhod cukru a nikotinu. Každý sáček je veganský a
-            obsahuje 80 mg kofeinu, který se rychle vstřebává ústní sliznicí.
-            Náš Energy Snus je navíc obohacen o vitamín B5.
-          </p>
+      <div className="line"></div>
 
-          <p>
-            Pokud hledáte pohodlnou a povzbuzující alternativu k energetickým
-            nápojům a kávě, Scooper Energy je odpovědí. Užijte si přirozený,
-            dlouhotrvající přísun energie a zažijte, jak se tento Energy Snus
-            stane vaším spolehlivým společníkem, ať už v tělocvičně, na
-            univerzitě, v práci nebo na další párty!
-          </p>
+
+      <div className="obsah">
+        <div className="text">
+          <h2>Co je to SHOCAFF?</h2>
+          <br />
+          <p>Shocaff je nový energetický kofeinový sáček bez nikotinu!</p> 
+          <br />
+          <p>Slouží jako zdravější náhrada k energetickým nápojům. Neobsahuje žadné cukry ani další škodlivé látky.</p>
+          <br />
+          <p>Je vhodný pro diskretní použití když potřebujete rychlý přísun energie. </p>
+
         </div>
-
-        <div class="i2">
-          <div class="ipuk">
-            <img src="../img/puk.png" width="70%" height="95%" alt="puk" />
-          </div>
+        <div className="logo">
+          
         </div>
       </div>
 

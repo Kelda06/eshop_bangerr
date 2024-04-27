@@ -20,7 +20,7 @@ export default function MainPage() {
    
       
 
-      <div class="mainp">
+      <div className="mainp">
         <img
           src="../img/uvodni.png"
           width="100%"
@@ -36,6 +36,11 @@ export default function MainPage() {
           <img src="../img/peach.png" alt="Slide 3" />
           <img src="../img/mint.png" alt="Slide 4" />
         </div>
+
+        <div className="phone-gallery">
+          <img src="../img/peach.png" alt="puk" />
+         
+        </div>
       
 
       
@@ -45,8 +50,8 @@ export default function MainPage() {
      
 
      
-      <div class="vyhody">
-        <div class="i1">
+      <div className="vyhody">
+        <div className="i1">
           <h2>
             Proč vyměnit energetické nápoje za <strong>SHOCAFF</strong>?
           </h2>
@@ -66,29 +71,53 @@ export default function MainPage() {
           <p> VEGANSKÝ</p>
         </div>
 
-        <div class="i2">
-          <div class="ipuk">
-          <img src="../img/puk.png"  alt="puk" />
+        <div className="i2">
+          <div className="ikofein">
+         <img src="../img/open-snus.webp" alt="kofein" />
           </div>
         </div>
       </div>
-      <div class="sm">
-        <h2>SLEDUJ NÁS NA SOCIÁLNÍCH SÍTÍCH</h2>
 
-        <div class="loga">
-          <a href="https://www.instagram.com/shocaff_czsk/" target="_blank"></a>
-          <img src="../img/ig.png" width="200px" height="200px" alt="" />
+      <div className="obsah">
+        <div className="text">
+        <h2>Co kofeinové sáčky SHOCAFF obsahují?</h2>
+        
 
-          <a href="https://www.tiktok.com/cs-CZ/" targer="_blank">
-            <img
-              src="../img/tiktok.png"
-              width="200px"
-              height="200px"
-              alt=""
-            />
-          </a>
+          <br />
+          <p>Kofeinové sáčky SHOCAFF jsou vyrobeny patentovaným výrobním postupem, který zajišťuje bezpečné a chutné použití.</p>
+          <br />
+          <p>Sáčky SHOCAFF jsou vyrobeny pouze z vysoce kvalitních surovin, jako je kofein, voda, dřevitá vlákna(celulóza), vitamín B5 a dochucovadla.</p>
+        </div>
+        <div className="marks">
+          <img src="../img/material.png" alt="mark" />
+          <img src="../img/voda.png" alt="mark" />
+          <img src="../img/sladidla.png" alt="mark" />
+          <img src="../img/kofein.png" alt="mark" />
+          
         </div>
       </div>
+
+      
+
+
+      <div className="obsah">
+        <div className="text">
+          <h2>Jak se kofeinové sáčky SHOCAFF používají?</h2>
+          <br />
+          <p>Vložíte si sáček pod horní ret a necháte maximálně 30 minut působit.</p> 
+          <br />
+          <p>Poté ho vyndáte a vložíte do přihrádky na horní straně puku</p>
+
+        </div>
+        <div className="manual">
+          <img src="../img/pouziti.jpeg" alt="mark" />
+        </div>
+      </div>
+
+
+
+      
+      
 
 
 

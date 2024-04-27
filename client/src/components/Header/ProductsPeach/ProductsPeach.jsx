@@ -8,26 +8,26 @@ export default function ProductsPeach() {
         <>
          <div id="p">
           
-         <div class="container">
+         <div className="container">
         <Link to={"/peach"}>
-            <div class="p">
+            <div className="p">
               <img src="../img/peach.png" width="300px" height="300px" />
             </div>
             <p>SHOCAFF ICE PEACH 80 mg/g</p>
             <br></br>
             <div className="container2">
-            <div class="price">
+            <div className="price">
               <strong>
                 <h3>129 Kč</h3>
               </strong>
             </div>
-            <div class="cart">
-              <div class="stav">
+            <div className="cart">
+              <div className="stav">
                 <strong>
                   <p>SKLADEM</p>
                 </strong>
               </div>
-              <button type="button" class="addToCartButton">
+              <button type="button" className="addToCartButton">
                 Do košíku
               </button>
             </div>

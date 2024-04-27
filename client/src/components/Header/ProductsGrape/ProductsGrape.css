@@ -33,7 +33,13 @@
     margin: 2.5rem;
     height: 31.25rem;
     justify-content: center;
-    border: solid black;
+    border: 0.5px solid gray;
+    background-color: whitesmoke;
+    
+}
+
+#p .container p{
+    text-align: center;
     
 }
 #p .addToCartButton {

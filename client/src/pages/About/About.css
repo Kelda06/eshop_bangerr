@@ -8,7 +8,7 @@
 }
 
 #about body {
-  font-family: "Anta", sans-serif;
+
   margin: 0;
   padding: 0;
   background-color: white;
@@ -19,29 +19,76 @@
   border-bottom: 3px solid white;
 }
 
-#about .container {
+#about .line{
+  border-top: 0.5px solid grey;
+  margin-right: 5%;
+  margin-left: 5%;
+  margin-top: 5%;
+}
+
+#about .obsah{
+  background-image: url(../img/pozadi3.png);
   color: white;
-  height: 100%;
+  margin-top: 1.875rem;
+  margin-left: 5rem;
+  margin-right: 5rem;
   display: flex;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  border-radius: 8px;
+
+ 
 }
 
-#about .i1 {
-  text-align: center;
-  background-image: url("../img/pozadi.png");
-  background-size: cover;
-  padding: 20px;
-  display: flex;
-  justify-content: space-evenly;
-  flex-direction: column;
-  width: 50%;
+#about .text{
+  width: 40%;
+  
+ 
 }
 
-#about .i2 {
-  padding-left: 25%;
-  padding-top: 8%;
-  background-color: white;
-  background-image: url("../img/pozadi2.png");
-  background-size: cover;
+#about p{
+  line-height: 1.5;
+}
+
+#about .logo{
+  width: 60%;
+  display: block;
+  
+  
+}
+
+#about .logo img{
+  width: 100%;
+  height: 6.25rem;
+  margin: 3%;
+  margin-top: 2.8125rem;
 }
 
 
+@media screen and (max-width: 850px) {
+
+  #about .obsah{
+    display: block;
+   
+    
+    
+    
+    
+  }
+
+  #about .text{
+    
+    text-align: center;
+    
+    width: 100%;
+  }
+
+  #about .logo{
+    height: 100%;
+    width: 100%;
+  }
+
+
+ }

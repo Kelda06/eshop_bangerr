@@ -3,14 +3,14 @@
 
 
 
-.whatsapp-chat {
+#footer .whatsapp-chat {
     position: fixed;
     right: 20px;  
     bottom: 20px; 
     z-index: 1000; 
   }
   
-  .whatsapp-chat a {
+  #footer .whatsapp-chat a {
     display: inline-block;
     background-color: #25d366; 
     color: white;
@@ -20,12 +20,74 @@
     font-size: 16px;
   }
   
+
+  #footer .contacts{
+    
+    background-color: black;
+    width: 100%;
+    
+  }
+
+  #footer .mate{
+    width: 50%;
+  }
+
+  #footer .mate img{
+    width: 1.875rem;
+    margin-right: 5%;
+  }
+
+  #footer .tel{
+    
+    display: flex;
+    padding: 0.625rem;
+  }
+
+  #footer .mail{
+   
+    display: flex;
+    padding: 0.625rem;
+  }
+
+
+
+
+  #footer .igtik{
+    width: 50%;
+  }
+
+  #footer .igtik img{
+    width: 1.875rem;
+    margin-right: 5%;
+  }
+
+  #footer .instagram{
+   
+    display: flex;
+    padding: 0.625rem;
+  }
+
+  #footer .tiktok{
+    
+    display: flex;
+    padding: 0.625rem;
+  }
+
+  #footer .logo{
+    display: flex;
+  }
+
+  #footer .logo img{
+    width: 50px;
+    height: 50px;
+  }
+  
   footer {
     background-color: black;
     color: white;
-    padding: 10px;
+    padding: 0.625rem;
     text-align: center;
+    border-top: 0.0313rem solid gray;
   }
-  
   
   

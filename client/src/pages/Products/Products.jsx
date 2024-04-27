@@ -14,7 +14,7 @@ export default function Products() {
       
       <Header></Header>
 
-      <div class="mainp">
+      <div className="mainp">
         <img
           src="../img/uvodni.png"
           width="100%"
@@ -27,11 +27,11 @@ export default function Products() {
       <div id="products">
       <div className="text">
       
-      <h1 class="main_text">NAŠE PRODUKTY</h1>
+      <h1 className="main_text">NAŠE PRODUKTY</h1>
      
       </div>
 
-      <div class="products1">
+      <div className="products1">
         
 
 

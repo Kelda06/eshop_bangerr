@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Anta&family=Bitter&display=swap");
+ @import url("https://fonts.googleapis.com/css2?family=Anta&family=Bitter&display=swap");
 
 
 #Peach * {
@@ -8,7 +8,7 @@
 }
 
 #Peach body {
-  font-family: "Anta", sans-serif;
+ 
   margin: 0;
   padding: 0;
   background-color: white;
@@ -24,13 +24,12 @@
     display: flex;
     width: 100%;
     height: 31.25rem;
-    margin-top: 4.375rem;
+    margin-top: 0.625rem;
     
 }
 
 #Peach .pic img{
-  width: 25rem;
-  height: 25rem;
+  width: 65%;
   
 }
 
@@ -184,9 +183,7 @@
  float: right;
  }
 
- #Peach .pargapleft{
-  
- }
+
 
 
  #Peach .container4{
@@ -195,6 +192,10 @@
   padding-right: 1.875rem;
   /*border: solid black;*/
   display: flex;
+  }
+
+  #Peach .manual{
+    width: 90%;
   }
 
   #Peach .man_text{
@@ -206,7 +207,7 @@
 
  
  #Peach .help{
-  padding-left: 2.5rem;
+  padding-left: 5rem;
   width: 80%;
   
  }
@@ -238,7 +239,7 @@
     
     width: 18.75rem;
     height: 18.75rem;
-    margin-top: 7rem;
+    margin-top: 1rem;
   }
 
   #Peach .buy{
@@ -361,7 +362,6 @@
     display: flex;
     flex-direction: column; /* Bloky se budou umisťovat pod sebe */
     align-items: center; /* Zarovnání na střed podle osy X */
-    
     width: 100%;
   }
 

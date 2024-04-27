@@ -12,8 +12,8 @@ export default function Contacts() {
       <div id="contacts">
       
 
-      <div class="container">
-        <div class="formular">
+      <div className="container">
+        <div className="formular">
           <h1>KONTAKTNÍ FORMULÁŘ</h1>
 
           <form action="/submit" method="post">
@@ -34,7 +34,9 @@ export default function Contacts() {
           </form>
         </div>
 
-        <div class="spoluprace">
+        <div className="line"></div>
+
+        <div className="spoluprace">
           <h1>VELKOOBCHODNÍ SPOLUPRÁCE</h1>
           <div>
             Chcete od nás nakupovat za <strong>velkoobchodní ceny?</strong>
@@ -48,7 +50,7 @@ export default function Contacts() {
           <div>
             <strong>Pracovní doba:</strong> Po - Pá: 7:00 - 16:00
           </div>
-          <div class="company">
+          <div className="company">
             <img src="../img/logo_shocaff.png" width="100%" height="100%" />
             <img
               src="../img/logo_energain.png" width="100%" height="100%" />

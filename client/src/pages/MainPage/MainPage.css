@@ -5,17 +5,15 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: "Anta", sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: white;
-  max-width: 100vw;
+#MainPage{
+ 
 }
 
-#Peach .mainp img{
-  margin-top: 100px;
-}
+
+
+
+
+
 
 
 
@@ -29,58 +27,199 @@ body {
   
 }
 
+#MainPage .phone-gallery{
+  display: none;
+ 
+}
+  
 
-.vyhodyb {
+
+#MainPage .vyhodyb {
   background-color: darkred;
 }
-.vyhody {
+#MainPage .vyhody {
   color: white;
   height: 100%;
   display: flex;
+  margin-bottom: 4.375rem;
 }
-.i1 {
+#MainPage .i1 {
   text-align: center;
   background-image: url("../img/pozadi.png");
   background-size: cover;
-
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;
   width: 50%;
   height: 25rem;
+  
+  
 }
 
-.i2 {
+#MainPage .i2 {
   width: 50%;
   height: 25rem;
-  background-color: white;
-  background-image: url("../img/pozadi2.png");
+  text-align: center;
+  background-color: black;
   background-size: cover;
+  
  
+  
 }
-.ipuk img {
-  width: 30%;
-  height: 30%;
-  margin-top: 1.5625rem;
-  margin-left: 25%;
+#MainPage .ikofein img{
+
+height: 25rem;
+width: 25rem;
+  
+  
+  
+  
+  
 }
 
-.sm {
-  padding-top: 10%;
+#MainPage .line{
+  border-top: 0.5px solid grey;
+  margin-right: 5%;
+  margin-left: 5%;
+  margin-top: 5%;
+}
+
+#MainPage .obsah{
+  background-image: url(../img/pozadi3.png);
+  background-size: cover;
+  margin-top: 1.875rem;
+  margin-left: 5rem;
+  margin-right: 5rem;
+  display: flex;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  color: white;
+  border-radius: 8px;
+  margin-bottom: 4.375rem;
+  
+ 
+}
+
+#MainPage .text{
+  width: 40%;
+  
+ 
+}
+
+#MainPage .text h2{
+  
+  display: block;
+  
+}
+
+#MainPage p{
+  line-height: 1.5;
+}
+
+#MainPage .marks{
+  width: 60%;
+  display: block;
+  
+  
+}
+
+#MainPage .marks img{
+  width: 6.25rem;
+  height: 6.25rem;
+  margin: 3%;
+  margin-top: 2.8125rem;
+}
+
+#MainPage .manual{
+  width: 60%;
+
+}
+
+#MainPage .manual img{
+  width: 100%;
+  margin-right: 3%;
+  margin-top: 2.8125rem;
+  
+  
+  
+}
+
+
+@media screen and (max-width: 850px) {
+  #MainPage .vyhody{
+    display: block ;
+    width: 100%;
+   
+  
+  }
+
+  #MainPage .i1{
+   width: 100%;
+   
+    
+  }
+
+  #MainPage .i2{
+    width: 100%;
+  }
+
+  #MainPage .obsah{
+    display: block;
+    margin: 8%;
+   
+    
+    
+    
+    
+  }
+
+  #MainPage .text{
+    
+    text-align: center;
+    
+    width: 100%;
+  }
+
+  #MainPage .marks{
+    text-align: center;
+    display: block;
+    width: 100%;
+  }
+
+  #MainPage .manual{
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 600px) {
-  .vyhody{
+  #MainPage .gallery{
+    display: none;
+  }
+
+  #MainPage .phone-gallery{
+    text-align: center;
     display: block;
-    width: 600px;
   }
 
-  .i1{
-    width: max-content;
+  #MainPage .phone-gallery img{
+    width: 50%;
+  }
+  #MainPage .vyhody{
+    display: block ;
+    width: 100%;
+  
   }
 
-  .i2{
-    width: max-content;
+  #MainPage .i1{
+   width: 100%;
+   
+    
+  }
+
+  #MainPage .i2{
+    width: 100%;
   }
 }
 
