@@ -1,6 +1,8 @@
 const router = require('express').Router();
 let Item = require('../models/item.model');
 
+const auth = require('../modules/auth');
+
 router.route('/').get((req, res) => {
     Item.find()
     .then(items => {
@@ -12,6 +14,10 @@ router.route('/').get((req, res) => {
 });
 
 router.route('/add').post((req, res) => {
+    if (!auth.isManager(req.body.authToken)) {
+        res.json('No auth for this task!');
+        return;
+    }
     const itemObject = {
         name: req.body.name,
         description: req.body.description,
@@ -51,6 +57,10 @@ router.route('/:id').delete((req, res) => {
 });
 
 router.route('/update/:id').post((req, res) => {
+    if (!auth.isManager(req.body.authToken)) {
+        res.json('No auth for this task!');
+        return;
+    }
     Item.findById(req.params.id)
     .then(foundItem => {
         foundItem.name = req.body.name ? req.body.name : foundItem.name;
@@ -67,6 +77,10 @@ router.route('/update/:id').post((req, res) => {
 });
 
 router.route('/enable/:id').post((req, res) => {
+    if (!auth.isManager(req.body.authToken)) {
+        res.json('No auth for this task!');
+        return;
+    }
     Item.findById(req.params.id)
     .then(foundItem => {
         foundItem.enabled = true;
@@ -81,6 +95,10 @@ router.route('/enable/:id').post((req, res) => {
 });
 
 router.route('/disable/:id').post((req, res) => {
+    if (!auth.isManager(req.body.authToken)) {
+        res.json('No auth for this task!');
+        return;
+    }
     Item.findById(req.params.id)
     .then(foundItem => {
         foundItem.enabled = false;
@@ -95,6 +113,10 @@ router.route('/disable/:id').post((req, res) => {
 });
 
 router.route('/amount/:id').post((req, res) => {
+    if (!auth.isManager(req.body.authToken)) {
+        res.json('No auth for this task!');
+        return;
+    }
     Item.findById(req.params.id)
     .then(foundItem => {
         foundItem.amount = req.body.amount;

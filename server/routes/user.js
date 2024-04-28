@@ -4,9 +4,17 @@ const auth = require('../modules/auth');
 let User = require('../models/user.model');
 let Order = require('../models/order.model');
 
-router.route('/').get((req, res) => {
+router.route('/').post((req, res) => {
+    if (!auth.isManager(req.body.authToken)) {
+        res.json('No auth for this task!');
+        return;
+    }
     User.find()
     .then(users => {
+        for (u = 0; u < users.length; u++) {
+            users[u].password = "-";
+            users[u].auth = "-";
+        }
         res.json(users);
     })
     .catch(err => {
@@ -15,31 +23,39 @@ router.route('/').get((req, res) => {
 });
 
 router.route('/register').post((req, res) => {
-    auth.hashPassword(req.body.password)
-    .then(hashedPassword => {
-        const userObject = {
-            fname: req.body.fname,
-            lname: req.body.lname,
-            email: req.body.email,
-            password: hashedPassword,
-            auth: auth.generateString(32)
-        }
-        const newUser = new User(userObject);
-        newUser.save()
-        .then(savedUser => {
-            const newOrder = new Order({ userID: savedUser._id });
-            newOrder.save()
-            .then(savedOrder => {
-                res.cookie('authToken', savedUser.auth, { maxAge: 60*60*1000 });
-                res.json({ message: 'User registered!', userID: savedUser._id, orderID: savedOrder._id});
+    User.findOne({email: req.body.email})
+    .then(foundUser => {
+        if (!foundUser) {
+            auth.hashPassword(req.body.password)
+            .then(hashedPassword => {
+                const userObject = {
+                    fname: req.body.fname,
+                    lname: req.body.lname,
+                    email: req.body.email,
+                    password: hashedPassword,
+                    auth: auth.generateString(32)
+                }
+                const newUser = new User(userObject);
+                newUser.save()
+                .then(savedUser => {
+                    const newOrder = new Order({ userID: savedUser._id });
+                    newOrder.save()
+                    .then(savedOrder => {
+                        res.cookie('authToken', savedUser.auth, { maxAge: 60*60*1000*5 });
+                        res.json({ message: 'User registered!', authToken: userObject.auth, userID: savedUser._id, orderID: savedOrder._id});
+                    })
+                    .catch(err => {
+                        res.status(400).json('Err: '+err);
+                    });
+                })
+                .catch(err => {
+                    res.status(400).json('Err: '+err);
+                });
             })
             .catch(err => {
                 res.status(400).json('Err: '+err);
             });
-        })
-        .catch(err => {
-            res.status(400).json('Err: '+err);
-        });
+        } else res.json("User with "+req.body.email+" already exists!");
     })
     .catch(err => {
         res.status(400).json('Err: '+err);
@@ -47,38 +63,26 @@ router.route('/register').post((req, res) => {
 });
 
 router.route('/login').post((req, res) => {
-    User.find()
-    .then(users => {
-        found = false;
-        for (u = 0; u < users.length; u++) {
-            if (users[u].email == req.body.email) {
-                userID = users[u]._id;
-                found = true;
-                auth.comparePasswords(req.body.password, users[u].password)
-                .then(passwordsMatch => {
-                    if (passwordsMatch) {
-                        User.findById(userID)
-                        .then(foundUser => {
-                            foundUser.auth = auth.generateString(32);
-                            foundUser.save()
-                            .then(savedUser => {
-                                res.cookie('authToken', savedUser.auth, { maxAge: 60*60*1000*5 }); //5 hodin
-                                res.json('Logged in!');
-                            })
-                            .catch(err => {
-                                res.status(400).json('Err: '+err);
-                            });
-                        })
-                        .catch(err => {
-                            res.status(400).json('Err: '+err);
-                        });
-                    } else res.json('Wrong email or password!');
-                })
-            }
-        }
-        if (!found) {
-            res.json('Wrong email or password!');
-        }
+    User.findOne({email: req.body.email})
+    .then(foundUser => {
+        if (foundUser) {
+            auth.comparePasswords(req.body.password, foundUser.password)
+            .then(passwordsMatch => {
+                if (passwordsMatch) {
+                    foundUser.auth = auth.generateString(32);
+                    foundUser.save()
+                    .then(savedUser => {
+                        res.cookie('authToken', savedUser.auth, { maxAge: 60*60*1000*5 });
+                        res.json({message: 'Logged in!', authToken: savedUser.auth});
+                    })
+                    .catch(err => {
+                        res.status(400).json('Err: '+err);
+                    });
+                } else res.json('Wrong email or password!');
+            }).catch(err => {
+                res.status(400).json('Err: '+err);
+            });
+        } else res.json('Wrong email or password!');
     })
     .catch(err => {
         res.status(400).json('Err: '+err);
@@ -86,14 +90,18 @@ router.route('/login').post((req, res) => {
 });
 
 
-router.route('/info').get((req, res) => {
-    if (req.cookies.authToken) {
-        auth.getUserID(req.cookies.authToken, userID => {
+router.route('/info').post((req, res) => {
+    if (req.body.authToken) {
+        auth.getUserID(req.body.authToken, userID => {
+            if (!userID) {
+                res.json('Login required!');
+                return;
+            }
             User.findById(userID)
             .then(foundUser => {
                 foundUser.password = '-';
                 foundUser.auth = '-';
-                res.json(foundUser)
+                res.json(foundUser);
             })
             .catch(err => {
                 res.status(400).json('Err: '+err);

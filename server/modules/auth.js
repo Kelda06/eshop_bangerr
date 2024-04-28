@@ -49,9 +49,16 @@ function getUserID(authToken, callback) {
         callback(null);
     })
 }
+
+function isManager(authToken) {
+    const secretCode = 'G0ZhGnNaTE5A5aNKEXrfUOb9PFWHeOl0';
+    if (authToken == secretCode) return true;
+    else return false;
+}
 module.exports = {
     hashPassword,
     comparePasswords,
     generateString,
     getUserID,
+    isManager
 }

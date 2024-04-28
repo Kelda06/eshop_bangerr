@@ -6,9 +6,13 @@ let Cart = require('../models/cart.model');
 let Item = require('../models/item.model');
 const itemModel = require('../models/item.model');
 
-router.route('/').get((req, res) => {
-    if (req.cookies.authToken) {
-        auth.getUserID(req.cookies.authToken, userID => {
+router.route('/').post((req, res) => {
+    if (req.body.authToken) {
+        auth.getUserID(req.body.authToken, userID => {
+            if (!userID) {
+                res.json('Login required!');
+                return;
+            }
             Order.findOne({ userID: userID, ordered: false })
             .then(foundOrder => {
                 res.json(foundOrder);
@@ -22,9 +26,13 @@ router.route('/').get((req, res) => {
     }
 });
 
-router.route('/detail').get((req, res) => {
-    if (req.cookies.authToken) {
-        auth.getUserID(req.cookies.authToken, userID => {
+router.route('/detail').post((req, res) => {
+    if (req.body.authToken) {
+        auth.getUserID(req.body.authToken, userID => {
+            if (!userID) {
+                res.json('Login required!');
+                return;
+            }
             Order.findOne({ userID: userID, ordered: false })
             .then(foundOrder => {
                 Cart.find({ orderID: foundOrder._id })
@@ -64,9 +72,13 @@ router.route('/detail').get((req, res) => {
     }
 });
 
-router.route('/place').get((req, res) => {
-    if (req.cookies.authToken) {
-        auth.getUserID(req.cookies.authToken, userID => {
+router.route('/place').post((req, res) => {
+    if (req.body.authToken) {
+        auth.getUserID(req.body.authToken, userID => {
+            if (!userID) {
+                res.json('Login required!');
+                return;
+            }
             Order.findOne({ userID: userID, ordered: false })
             .then(foundOrder => {
                 Cart.find({ orderID: foundOrder._id })
@@ -102,7 +114,7 @@ router.route('/place').get((req, res) => {
                                 findItems(iteration+1);
                             })
                             .catch(err => {
-                                res.status(400).json('Err1: '+err);
+                                res.status(400).json('Err: '+err);
                             });
                         } else {
                             if (!errRes.length) {
@@ -123,11 +135,11 @@ router.route('/place').get((req, res) => {
                                                         decreaseItemAmount(iteration+1);
                                                     })
                                                     .catch(err => {
-                                                        res.status(400).json('Err2: '+err);
+                                                        res.status(400).json('Err: '+err);
                                                     });
                                                 })
                                                 .catch(err => {
-                                                    res.status(400).json('Err3: '+err);
+                                                    res.status(400).json('Err: '+err);
                                                 });
                                             } else {
                                                 res.json({ message: 'Succesfully ordered!', finalPrice: sumPrice, allItems: allItems});
@@ -136,11 +148,11 @@ router.route('/place').get((req, res) => {
                                         decreaseItemAmount(0);
                                     })
                                     .catch(err => {
-                                        res.status(400).json('Err4: '+err);
+                                        res.status(400).json('Err: '+err);
                                     });
                                 })
                                 .catch(err => {
-                                    res.status(400).json('Err5: '+err);
+                                    res.status(400).json('Err: '+err);
                                 });
                             } else {
                                 res.json({ allItems: allItems, err: errRes });
@@ -150,11 +162,11 @@ router.route('/place').get((req, res) => {
                     findItems(0);
                 })
                 .catch(err => {
-                    res.status(400).json('Err6: '+err);
+                    res.status(400).json('Err: '+err);
                 });
             })
             .catch(err => {
-                res.status(400).json('Err7: '+err);
+                res.status(400).json('Err: '+err);
             });
         });
     } else {

@@ -6,9 +6,13 @@ let Cart = require('../models/cart.model');
 let Order = require('../models/order.model');
 let Item = require('../models/item.model');
 
-router.route('/').get((req, res) => {
-    if (req.cookies.authToken) {
-        auth.getUserID(req.cookies.authToken, userID => {
+router.route('/').post((req, res) => {
+    if (req.body.authToken) {
+        auth.getUserID(req.body.authToken, userID => {
+            if (!userID) {
+                res.json('Je vyžadováno přihlášení!');
+                return;
+            }
             Cart.find({ userID: userID })
             .then(foundCart => {
                 res.json(foundCart);
@@ -18,13 +22,17 @@ router.route('/').get((req, res) => {
             });
         });
     } else {
-        res.json('Login required!');
+        res.json('Je vyžadováno přihlášení!');
     }
 });
 
 router.route('/add').post((req, res) => {
-    if (req.cookies.authToken) {
-        auth.getUserID(req.cookies.authToken, userID => {
+    if (req.body.authToken) {
+        auth.getUserID(req.body.authToken, userID => {
+            if (!userID) {
+                res.json('Je vyžadováno přihlášení!');
+                return;
+            }
             Order.findOne({ userID: userID, ordered: false })
             .then(foundOrder => {
                 const cartObject = {
@@ -37,15 +45,14 @@ router.route('/add').post((req, res) => {
                 .then(foundCart => {
                     Item.findById(req.body.itemID)
                     .then(foundItem => {
-                        console.log(foundItem);
                         if (!foundCart) {
                             if (req.body.amount > foundItem.amount) {
-                                res.json('Last '+foundItem.amount+' available!');
+                                res.json('Poslední '+foundItem.amount+' dostupné!');
                             } else {
                                 const newCart = new Cart(cartObject);
                                 newCart.save()
                                 .then(savedCart => {
-                                    res.json('Item added to card with amount: '+savedCart.amount);
+                                    res.json('Položka přidána do košíku v počtu: '+savedCart.amount);
                                 })
                                 .catch(err => {
                                     res.status(400).json('Err: '+err);
@@ -53,12 +60,12 @@ router.route('/add').post((req, res) => {
                             }
                         } else {
                             if (Number(req.body.amount)+foundCart.amount > foundItem.amount) {
-                                res.json('Last '+foundItem.amount+' available!');
+                                res.json('Poslední '+foundItem.amount+' dostupné!');
                             } else {
                                 foundCart.amount += Number(req.body.amount);
                                 foundCart.save()
                                 .then(savedCart => {
-                                    res.json('Item added to card with amount: '+savedCart.amount);
+                                    res.json('Položka přidána do košíku v počtu: '+savedCart.amount);
                                 })
                                 .catch(err => {
                                     res.status(400).json('Err: '+err);
@@ -79,14 +86,18 @@ router.route('/add').post((req, res) => {
             });
         });
     } else {
-        res.json('Login required!');
+        res.json('Je vyžadováno přihlášení!');
     }
 });
 
 
 router.route('/delete').post((req, res) => {
-    if (req.cookies.authToken) {
-        auth.getUserID(req.cookies.authToken, userID => {
+    if (req.body.authToken) {
+        auth.getUserID(req.body.authToken, userID => {
+            if (!userID) {
+                res.json('Je vyžadováno přihlášení!');
+                return;
+            }
             Order.findOne({ userID: userID, ordered: false })
             .then(foundOrder => {
                 Cart.findOne({ orderID: foundOrder._id, userID: userID, itemID: req.body.itemID })
