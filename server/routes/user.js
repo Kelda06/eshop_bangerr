@@ -6,7 +6,7 @@ let Order = require('../models/order.model');
 
 router.route('/').post((req, res) => {
     if (!auth.isManager(req.body.authToken)) {
-        res.json('No auth for this task!');
+        res.json('Pro tento task je potřeba autorizace!');
         return;
     }
     User.find()
@@ -42,7 +42,7 @@ router.route('/register').post((req, res) => {
                     newOrder.save()
                     .then(savedOrder => {
                         res.cookie('authToken', savedUser.auth, { maxAge: 60*60*1000*5 });
-                        res.json({ message: 'User registered!', authToken: userObject.auth, userID: savedUser._id, orderID: savedOrder._id});
+                        res.json({ message: 'Uživatel zaregistrován!', authToken: userObject.auth, userID: savedUser._id, orderID: savedOrder._id});
                     })
                     .catch(err => {
                         res.status(400).json('Err: '+err);
@@ -55,7 +55,7 @@ router.route('/register').post((req, res) => {
             .catch(err => {
                 res.status(400).json('Err: '+err);
             });
-        } else res.json("User with "+req.body.email+" already exists!");
+        } else res.json("User with "+req.body.email+" Už existuje!");
     })
     .catch(err => {
         res.status(400).json('Err: '+err);
@@ -73,16 +73,16 @@ router.route('/login').post((req, res) => {
                     foundUser.save()
                     .then(savedUser => {
                         res.cookie('authToken', savedUser.auth, { maxAge: 60*60*1000*5 });
-                        res.json({message: 'Logged in!', authToken: savedUser.auth});
+                        res.json({message: 'Přihlášen!', authToken: savedUser.auth});
                     })
                     .catch(err => {
                         res.status(400).json('Err: '+err);
                     });
-                } else res.json('Wrong email or password!');
+                } else res.json('Špatný email nebo heslo!');
             }).catch(err => {
                 res.status(400).json('Err: '+err);
             });
-        } else res.json('Wrong email or password!');
+        } else res.json('Špatný email nebo heslo!');
     })
     .catch(err => {
         res.status(400).json('Err: '+err);
@@ -94,7 +94,7 @@ router.route('/info').post((req, res) => {
     if (req.body.authToken) {
         auth.getUserID(req.body.authToken, userID => {
             if (!userID) {
-                res.json('Login required!');
+                res.json('Je vyžadováno přihlášení!');
                 return;
             }
             User.findById(userID)

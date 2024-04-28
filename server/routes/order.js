@@ -5,12 +5,13 @@ let Order = require('../models/order.model');
 let Cart = require('../models/cart.model');
 let Item = require('../models/item.model');
 const itemModel = require('../models/item.model');
+let functionRunning = false;
 
 router.route('/').post((req, res) => {
     if (req.body.authToken) {
         auth.getUserID(req.body.authToken, userID => {
             if (!userID) {
-                res.json('Login required!');
+                res.json('Je vyžadováno přihlášení!');
                 return;
             }
             Order.findOne({ userID: userID, ordered: false })
@@ -22,7 +23,7 @@ router.route('/').post((req, res) => {
             });
         });
     } else {
-        res.json('Login required!');
+        res.json('Je vyžadováno přihlášení!');
     }
 });
 
@@ -30,18 +31,22 @@ router.route('/detail').post((req, res) => {
     if (req.body.authToken) {
         auth.getUserID(req.body.authToken, userID => {
             if (!userID) {
-                res.json('Login required!');
+                res.json('Je vyžadováno přihlášení!');
                 return;
             }
             Order.findOne({ userID: userID, ordered: false })
             .then(foundOrder => {
                 Cart.find({ orderID: foundOrder._id })
                 .then(foundCarts => {
+                   
+                    
                     allItems = [];
                     function findItems(iteration) {
+                        functionRunning = true;
                         if (foundCarts[iteration]) {
                             Item.findById(foundCarts[iteration].itemID)
                             .then(foundItem => {
+                               
                                 allItems.push({
                                     name: foundItem.name,
                                     description: foundItem.description,
@@ -55,9 +60,15 @@ router.route('/detail').post((req, res) => {
                             .catch(err => {
                                 res.status(400).json('Err: '+err);
                             });
-                        } else res.json(allItems);
+                        } else {
+                          
+                            
+                            functionRunning = false;
+                            res.json(allItems);
+                        }
                     }
-                    findItems(0);
+                    if (!functionRunning) findItems(0);
+                    else res.json("Too much requests!");
                 })
                 .catch(err => {
                     res.status(400).json('Err: '+err);
@@ -68,7 +79,7 @@ router.route('/detail').post((req, res) => {
             });
         });
     } else {
-        res.json('Login required!');
+        res.json('Je vyžadováno přihlášení!');
     }
 });
 
@@ -76,7 +87,7 @@ router.route('/place').post((req, res) => {
     if (req.body.authToken) {
         auth.getUserID(req.body.authToken, userID => {
             if (!userID) {
-                res.json('Login required!');
+                res.json('Je vyžadováno přihlášení!');
                 return;
             }
             Order.findOne({ userID: userID, ordered: false })
@@ -87,6 +98,7 @@ router.route('/place').post((req, res) => {
                     errRes = [];
                     sumPrice = 0;
                     function findItems(iteration) {
+                        functionRunning = true;
                         if (foundCarts[iteration]) {
                             Item.findById(foundCarts[iteration].itemID)
                             .then(foundItem => {
@@ -142,7 +154,7 @@ router.route('/place').post((req, res) => {
                                                     res.status(400).json('Err: '+err);
                                                 });
                                             } else {
-                                                res.json({ message: 'Succesfully ordered!', finalPrice: sumPrice, allItems: allItems});
+                                                res.json({ message: 'Úspěšně objednáno!', finalPrice: sumPrice, allItems: allItems});
                                             }
                                         }
                                         decreaseItemAmount(0);
@@ -159,7 +171,8 @@ router.route('/place').post((req, res) => {
                             }
                         }
                     }
-                    findItems(0);
+                    if (!functionRunning) findItems(0);
+                    else res.json("Too much requests!");
                 })
                 .catch(err => {
                     res.status(400).json('Err: '+err);
@@ -170,7 +183,7 @@ router.route('/place').post((req, res) => {
             });
         });
     } else {
-        res.json('Login required!');
+        res.json('Je vyžadováno přihlášení!');
     }
 });
 

@@ -8,7 +8,7 @@ function hashPassword(password) {
     return new Promise((resolve, reject) => {
         bcrypt.hash(password, saltRounds, (error, hashedPassword) => {
             if (error) {
-                reject(new Error('Password hashing failed'));
+                reject(new Error('Chyba pri hashovaní hesla'));
             } else {
                 resolve(hashedPassword);
             }

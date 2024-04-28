@@ -103,13 +103,13 @@ router.route('/delete').post((req, res) => {
                 Cart.findOne({ orderID: foundOrder._id, userID: userID, itemID: req.body.itemID })
                 .then(foundCart => {
                     if (!foundCart) {
-                        return res.status(404).json('Item not found in the cart');
+                        return res.status(404).json('Položka nenalezena v košíku');
                     }
 
                     if (foundCart.amount <= req.body.amount) {
                         foundCart.deleteOne()
                         .then(() => {
-                            res.json('Item deleted from cart');
+                            res.json('Položka smazána z košíku');
                         })
                         .catch(err => {
                             res.status(400).json('Error: ' + err);
@@ -118,7 +118,7 @@ router.route('/delete').post((req, res) => {
                         foundCart.amount -= Number(req.body.amount);
                         foundCart.save()
                         .then(savedCart => {
-                            res.json('Item amount updated in cart, new amount: ' + savedCart.amount);
+                            res.json('Počet položek v košíku byl aktualizován, nový počet je: ' + savedCart.amount);
                         })
                         .catch(err => {
                             res.status(400).json('Error: ' + err);
@@ -134,7 +134,7 @@ router.route('/delete').post((req, res) => {
             });
         });
     } else {
-        res.json('Login required!');
+        res.json('Je vyžadováno přihlášení!');
     }
 });
 

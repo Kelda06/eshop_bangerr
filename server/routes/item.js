@@ -15,7 +15,7 @@ router.route('/').get((req, res) => {
 
 router.route('/add').post((req, res) => {
     if (!auth.isManager(req.body.authToken)) {
-        res.json('No auth for this task!');
+        res.json('Pro tento task je potřeba autorizace!');
         return;
     }
     const itemObject = {
@@ -28,7 +28,7 @@ router.route('/add').post((req, res) => {
     const newItem = new Item(itemObject);
     newItem.save()
     .then(savedItem => {
-        res.json({ message: 'Item added!', itemID: savedItem._id });
+        res.json({ message: 'Položka přidána!', itemID: savedItem._id });
     })
     .catch(err => {
         res.status(400).json('Err: '+err);
@@ -49,7 +49,7 @@ router.route('/:id').get((req, res) => {
 router.route('/:id').delete((req, res) => {
     Item.findByIdAndDelete(req.params.id)
     .then(() => {
-        res.json('Item deleted!');
+        res.json('Položka byla smazána!');
     })
     .catch(err => {
         res.status(400).json('Err: '+err);
@@ -58,7 +58,7 @@ router.route('/:id').delete((req, res) => {
 
 router.route('/update/:id').post((req, res) => {
     if (!auth.isManager(req.body.authToken)) {
-        res.json('No auth for this task!');
+        res.json('Pro tento task je potřeba autorizace!');
         return;
     }
     Item.findById(req.params.id)
@@ -68,7 +68,7 @@ router.route('/update/:id').post((req, res) => {
         foundItem.price = req.body.price ? req.body.price : foundItem.price;
         foundItem.save()
         .then(() => {
-            res.json('Item updated!');
+            res.json('Položka byla aktualizována!');
         })
         .catch(err => {
             res.status(400).json('Err: '+err);
@@ -78,7 +78,7 @@ router.route('/update/:id').post((req, res) => {
 
 router.route('/enable/:id').post((req, res) => {
     if (!auth.isManager(req.body.authToken)) {
-        res.json('No auth for this task!');
+        res.json('Pro tento task je potřeba autorizace!');
         return;
     }
     Item.findById(req.params.id)
@@ -86,7 +86,7 @@ router.route('/enable/:id').post((req, res) => {
         foundItem.enabled = true;
         foundItem.save()
         .then(() => {
-            res.json('Item enabled!');
+            res.json('Položka je dostupná!');
         })
         .catch(err => {
             res.status(400).json('Err: '+err);
@@ -96,7 +96,7 @@ router.route('/enable/:id').post((req, res) => {
 
 router.route('/disable/:id').post((req, res) => {
     if (!auth.isManager(req.body.authToken)) {
-        res.json('No auth for this task!');
+        res.json('Pro tento task je potřeba autorizace!');
         return;
     }
     Item.findById(req.params.id)
@@ -104,7 +104,7 @@ router.route('/disable/:id').post((req, res) => {
         foundItem.enabled = false;
         foundItem.save()
         .then(() => {
-            res.json('Item disabled!');
+            res.json('Položka je nedostupná!');
         })
         .catch(err => {
             res.status(400).json('Err: '+err);
@@ -114,7 +114,7 @@ router.route('/disable/:id').post((req, res) => {
 
 router.route('/amount/:id').post((req, res) => {
     if (!auth.isManager(req.body.authToken)) {
-        res.json('No auth for this task!');
+        res.json('Pro tento task je potřeba autorizace!');
         return;
     }
     Item.findById(req.params.id)
@@ -122,7 +122,7 @@ router.route('/amount/:id').post((req, res) => {
         foundItem.amount = req.body.amount;
         foundItem.save()
         .then(() => {
-            res.json('Amount changed to '+req.body.amount+'!');
+            res.json('Počet se změnil na '+req.body.amount+'!');
         })
         .catch(err => {
             res.status(400).json('Err: '+err);
