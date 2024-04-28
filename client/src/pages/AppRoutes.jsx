@@ -18,6 +18,7 @@ import Footer from "../components/Header/Footer/Footer";
 import ProductsPeach from "../components/Header/ProductsPeach/ProductsPeach"
 import ProductsGrape from "../components/Header/ProductsGrape/ProductsGrape";
 import Login from "./Login/Login";
+import Registration from "./Registration/Registration";
 
 
 
@@ -47,6 +48,7 @@ export default function AppRoutes() {
           <Route path="/productsPeach" element={<ProductsPeach />} />
           <Route path="/productsGrape" element={<ProductsGrape />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/registration" element={<Registration />} />
           
 
         </Routes>
