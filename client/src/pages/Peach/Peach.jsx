@@ -2,8 +2,21 @@ import { Link } from "react-router-dom";
 import "./Peach.css";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Header/Footer/Footer";
+import axios from "axios";
+import Cookies from 'universal-cookie';
+const cookies = new Cookies();
 
 export default function Peach() {
+  const handleAddToCart = () => {
+    axios.post("http://localhost:7070/cart/add", { authToken: cookies.get("authToken"), itemID: "662d553a6d7d113551ecf466", amount:"1"})
+      .then(response => {
+        console.log(cookies.get('authToken'));
+        console.log("Položka byla úspěšně přidána do košíku:", response.data);
+      })
+      .catch(error => {
+        console.error("Chyba při přidávání položky do košíku:", error);
+      });
+  };
   return (
     <>
      
@@ -51,9 +64,9 @@ export default function Peach() {
                   <p>SKLADEM</p>
                 </strong>
               </div>
-              <button type="button" className="CartButton">
-                DO KOŠÍKU
-              </button>
+              <button onClick={handleAddToCart} type="button" className="CartButton">
+                  Do košíku
+                </button>
             </div>
             </div>
           </div>

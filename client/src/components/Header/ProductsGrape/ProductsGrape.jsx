@@ -1,8 +1,21 @@
 import "./ProductsGrape.css";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import Cookies from 'universal-cookie';
+const cookies = new Cookies();
 
 
 export default function ProductsGrape() {
+  const handleAddToCart = () => {
+    axios.post("http://localhost:7070/cart/add", { authToken: cookies.get("authToken"), itemID: "662e3a7772a618f167f67cf6", amount:"1"})
+      .then(response => {
+        console.log(cookies.get('authToken'));
+        console.log("Položka byla úspěšně přidána do košíku:", response.data);
+      })
+      .catch(error => {
+        console.error("Chyba při přidávání položky do košíku:", error);
+      });
+  };
     return(
 
         <>
@@ -27,12 +40,13 @@ export default function ProductsGrape() {
                   <p>SKLADEM</p>
                 </strong>
               </div>
-              <button type="button" className="addToCartButton">
-                Do košíku
-              </button>
+             
             </div>
             </div>
             </Link>
+            <button onClick={handleAddToCart} type="button" className="CartButton">
+                  Do košíku
+                </button>
         </div>
         </div>
         </>

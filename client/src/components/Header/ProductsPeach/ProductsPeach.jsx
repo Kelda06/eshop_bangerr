@@ -42,7 +42,7 @@ export default function ProductsPeach() {
               </div>
             </div>
           </Link>
-          <button onClick={handleAddToCart} type="button" className="addToCartButton">
+          <button onClick={handleAddToCart} type="button" className="CartButton">
                   Do košíku
                 </button>
         </div>
