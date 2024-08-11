@@ -46,9 +46,9 @@
 @media screen and (min-width: 900px) {
     #products .product {
         display: flex;
-        flex-direction: column; /* Bloky se budou umisťovat pod sebe */
-        align-items: center; /* Zarovnání na střed podle osy X */
-        justify-content: center; /* Zarovnání na střed podle osy Y */
+        flex-direction: column;
+        align-items: center; 
+        justify-content: center; 
       }
       
 

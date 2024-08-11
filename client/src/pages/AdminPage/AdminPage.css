@@ -1,0 +1,64 @@
+
+
+
+#ap .formular{
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#ap h1 {
+    color: #333;
+    text-align: center;
+}
+
+#ap label {
+    font-size: 16px;
+    color: #666;
+    display: block;
+    margin-bottom: 5px;
+}
+
+#ap input[type="text"],
+#ap input[type="number"],
+#ap input[type="password"],
+#ap textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#ap textarea {
+    height: 100px;
+}
+
+#ap button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#ap button:hover {
+    background-color: #0056b3;
+}
+
+#ap a {
+    text-decoration: none;
+    color: #007BFF;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+#ap a:hover {
+    text-decoration: underline;
+}

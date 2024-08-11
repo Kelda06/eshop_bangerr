@@ -3,6 +3,17 @@ import { Link } from "react-router-dom";
 
 
 
+const NavBar = ({ isAdmin }) => {
+  return (
+      <nav>
+          <Link to="/">Domů</Link>
+          {/* Zobrazit tlačítko pro admin stránku pouze pokud je uživatel admin */}
+          {isAdmin && <Link to="/admin">Admin Page</Link>}
+      </nav>
+  );
+};
+
+
 
 export default function Header() {
   
@@ -65,3 +76,4 @@ export default function Header() {
 
     
 };
+

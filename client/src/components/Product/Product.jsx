@@ -2,7 +2,7 @@ import "./Product.css";
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Cookies from 'universal-cookie';
-import { Link } from 'react-router-dom'; // Import Link z react-router-dom
+import { Link } from 'react-router-dom'; 
 
 const cookies = new Cookies();
 
@@ -12,24 +12,24 @@ const ItemList = () => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        // Fetch items from the API using Axios
+        
         axios.get('http://localhost:7070/item')
             .then(response => {
-                setItems(response.data); // Uložíme načtené data do stavu
+                setItems(response.data);
                 setLoading(false);
             })
             .catch(error => {
-                setError(error.message); // Uložíme případnou chybu
+                setError(error.message); 
                 setLoading(false);
             });
-    }, []); // [] znamená, že efekt se spustí jen jednou při montáži komponenty
+    }, []);
 
     if (loading) {
-        return <p>Loading items...</p>; // Zobrazení, pokud se data stále načítají
+        return <p>Loading items...</p>; 
     }
 
     if (error) {
-        return <p>Error loading items: {error}</p>; // Zobrazení, pokud se objeví chyba
+        return <p>Error loading items: {error}</p>; 
     }
 
     const handleAddToCart = (itemID) => {
@@ -50,9 +50,9 @@ const ItemList = () => {
                     {items.map(item => (
                         <div className="container" key={item._id}>
                             <div className="p">
-                                {/* Link kolem obrázku, který přesměruje na stránku s podrobnostmi o produktu */}
+                                
                                 <Link to={`/product/${item._id}`}>
-                                    <img src="../img/peach.png" width="300px" height="300px" alt={item.name} />
+                                {item.img && <img src={item.img} alt={item.name} style={{ width: '300px', height: '300px' }} />}
                                 </Link>
                             </div>
                             <div className="name">
@@ -91,4 +91,3 @@ const ItemList = () => {
 };
 
 export default ItemList;
-//                    {item.img && <img src={item.img} alt={item.name} style={{ width: '100px', height: '100px' }} />}

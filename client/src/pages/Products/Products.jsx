@@ -2,8 +2,6 @@ import { Link } from "react-router-dom";
 import "./Products.css";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Header/Footer/Footer";
-import ProductsPeach from "../../components/Header/ProductsPeach/ProductsPeach";
-import ProductsGrape from "../../components/Header/ProductsGrape/ProductsGrape";
 import Product from "../../components/Product/Product";
 
 

@@ -1,3 +1,4 @@
+import "./ProductView.css";
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
@@ -40,11 +41,9 @@ const ItemDetail = () => {
 
  <div className="container">
    <div className="pic">
-     <img
-       src="../img/peach.png"
-       
-       alt="peach"
-     ></img>
+    <div className="img">
+   {item.img && <img src={item.img} alt={item.name} style={{ width: '300px', height: '300px' }} />}
+   </div>
    </div>
    <div className="buy">
      <p className="name">
@@ -68,7 +67,7 @@ const ItemDetail = () => {
        <div className="order">
          <div className="price">
            <strong>
-             <h1>{item.price} Kč</h1>
+           <p>{item.price} Kč</p>  
            </strong>
          </div>
          <br />
