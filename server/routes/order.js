@@ -7,9 +7,9 @@ let Item = require('../models/item.model');
 const itemModel = require('../models/item.model');
 let functionRunning = false;
 
-router.route('/').post((req, res) => {
-    if (req.body.authToken) {
-        auth.getUserID(req.body.authToken, userID => {
+router.route('/:auth').get((req, res) => {
+    if (req.params.auth) {
+        auth.getUserID(req.params.auth, userID => {
             if (!userID) {
                 res.json('Je vyžadováno přihlášení!');
                 return;
@@ -27,9 +27,9 @@ router.route('/').post((req, res) => {
     }
 });
 
-router.route('/detail').post((req, res) => {
-    if (req.body.authToken) {
-        auth.getUserID(req.body.authToken, userID => {
+router.route('/detail/:auth').get((req, res) => {
+    if (req.params.auth) {
+        auth.getUserID(req.params.auth, userID => {
             if (!userID) {
                 res.json('Je vyžadováno přihlášení!');
                 return;
@@ -68,7 +68,7 @@ router.route('/detail').post((req, res) => {
                         }
                     }
                     if (!functionRunning) findItems(0);
-                    else res.json("Too much requests!");
+                    else res.json("Příliš mnoho požadavků!");
                 })
                 .catch(err => {
                     res.status(400).json('Err: '+err);
@@ -83,9 +83,9 @@ router.route('/detail').post((req, res) => {
     }
 });
 
-router.route('/place').post((req, res) => {
-    if (req.body.authToken) {
-        auth.getUserID(req.body.authToken, userID => {
+router.route('/place/:auth').put((req, res) => {
+    if (req.params.auth) {
+        auth.getUserID(req.params.auth, userID => {
             if (!userID) {
                 res.json('Je vyžadováno přihlášení!');
                 return;
@@ -172,7 +172,7 @@ router.route('/place').post((req, res) => {
                         }
                     }
                     if (!functionRunning) findItems(0);
-                    else res.json("Too much requests!");
+                    else res.json("Příliš mnoho požadavků!");
                 })
                 .catch(err => {
                     res.status(400).json('Err: '+err);

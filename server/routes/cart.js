@@ -6,9 +6,9 @@ let Cart = require('../models/cart.model');
 let Order = require('../models/order.model');
 let Item = require('../models/item.model');
 
-router.route('/').post((req, res) => {
-    if (req.body.authToken) {
-        auth.getUserID(req.body.authToken, userID => {
+router.route('/:auth').get((req, res) => {
+    if (req.params.auth) {
+        auth.getUserID(req.params.auth, userID => {
             if (!userID) {
                 res.json('Je vyžadováno přihlášení!');
                 return;
@@ -26,9 +26,9 @@ router.route('/').post((req, res) => {
     }
 });
 
-router.route('/add').post((req, res) => {
-    if (req.body.authToken) {
-        auth.getUserID(req.body.authToken, userID => {
+router.route('/add/:auth').put((req, res) => {
+    if (req.params.auth) {
+        auth.getUserID(req.params.auth, userID => {
             if (!userID) {
                 res.json('Je vyžadováno přihlášení!');
                 return;
@@ -52,7 +52,7 @@ router.route('/add').post((req, res) => {
                                 const newCart = new Cart(cartObject);
                                 newCart.save()
                                 .then(savedCart => {
-                                    res.json('Položka přidána do košíku v počtu: '+savedCart.amount);
+                                    res.json('Položka přidána do košíku, aktuální počet: '+savedCart.amount);
                                 })
                                 .catch(err => {
                                     res.status(400).json('Err: '+err);
@@ -91,9 +91,9 @@ router.route('/add').post((req, res) => {
 });
 
 
-router.route('/delete').post((req, res) => {
-    if (req.body.authToken) {
-        auth.getUserID(req.body.authToken, userID => {
+router.route('/delete/:auth').put((req, res) => {
+    if (req.params.auth) {
+        auth.getUserID(req.params.auth, userID => {
             if (!userID) {
                 res.json('Je vyžadováno přihlášení!');
                 return;

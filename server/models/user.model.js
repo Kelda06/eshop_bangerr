@@ -6,8 +6,9 @@ const userSchema = new Schema({
     lname: { type: String, required: true },
     email: { type: String, required: true },
     password: { type: String, required: true },
+    role: { type: String, default: 'client' },
     auth: { type: String, default: '' },
-    active: { type: Boolean, default: true }
+    deactivated: { type: Boolean, default: false }
 }, {
     timestamps: true,
 });

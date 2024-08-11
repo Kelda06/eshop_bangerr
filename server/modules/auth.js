@@ -50,10 +50,14 @@ function getUserID(authToken, callback) {
     })
 }
 
-function isManager(authToken) {
-    const secretCode = 'G0ZhGnNaTE5A5aNKEXrfUOb9PFWHeOl0';
-    if (authToken == secretCode) return true;
-    else return false;
+async function isManager(authToken) {
+    await User.findOne({ auth: authToken })
+    .then(foundUser => {
+        if (foundUser.role == "manager" || foundUser.role == "admin") return true;
+        else return false; 
+    }).catch(err => {
+        return false;
+    })
 }
 module.exports = {
     hashPassword,

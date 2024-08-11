@@ -4,7 +4,7 @@ let Item = require('../models/item.model');
 const auth = require('../modules/auth');
 
 router.route('/').get((req, res) => {
-    Item.find()
+    Item.find({ enabled: true })
     .then(items => {
         res.json(items);
     })
@@ -13,26 +13,37 @@ router.route('/').get((req, res) => {
     });
 });
 
-router.route('/add').post((req, res) => {
-    if (!auth.isManager(req.body.authToken)) {
-        res.json('Pro tento task je potřeba autorizace!');
-        return;
+router.route('/add/:auth').post((req, res) => {
+    if (req.params.auth) {
+        if (!auth.isManager(req.params.auth)) {
+            res.json('Pro tento task je potřeba oprávnění!');
+            return;
+        }
+        const itemObject = {
+            name: req.body.name,
+            description: req.body.description,
+            price: req.body.price,
+            amount: req.body.amount,
+            weight: req.body.weight,
+            content: req.body.content,
+            caffeine: req.body.caffeine,
+            flavor: req.body.flavor,
+            strength: req.body.strength,
+            size: req.body.size,
+            enabled: true
+        }
+        const newItem = new Item(itemObject);
+        newItem.save()
+        .then(savedItem => {
+            res.json({ message: 'Položka přidána!', itemID: savedItem._id });
+        })
+        .catch(err => {
+            res.status(400).json('Err: '+err);
+        });
+    } else {
+        res.json('Je vyžadováno přihlášení!');
     }
-    const itemObject = {
-        name: req.body.name,
-        description: req.body.description,
-        price: req.body.price,
-        amount: req.body.amount,
-        active: true
-    }
-    const newItem = new Item(itemObject);
-    newItem.save()
-    .then(savedItem => {
-        res.json({ message: 'Položka přidána!', itemID: savedItem._id });
-    })
-    .catch(err => {
-        res.status(400).json('Err: '+err);
-    });
+    
 });
 
 
@@ -46,7 +57,11 @@ router.route('/:id').get((req, res) => {
     });
 });
 
-router.route('/:id').delete((req, res) => {
+router.route('/:id/:auth').delete((req, res) => {
+    if (!auth.isManager(req.params.auth)) {
+        res.json('Pro tento task je potřeba oprávnění!');
+        return;
+    }
     Item.findByIdAndDelete(req.params.id)
     .then(() => {
         res.json('Položka byla smazána!');
@@ -56,9 +71,9 @@ router.route('/:id').delete((req, res) => {
     });
 });
 
-router.route('/update/:id').post((req, res) => {
-    if (!auth.isManager(req.body.authToken)) {
-        res.json('Pro tento task je potřeba autorizace!');
+router.route('/update/:id/:auth').put((req, res) => {
+    if (!auth.isManager(req.params.auth)) {
+        res.json('Pro tento task je potřeba oprávnění!');
         return;
     }
     Item.findById(req.params.id)
@@ -66,6 +81,12 @@ router.route('/update/:id').post((req, res) => {
         foundItem.name = req.body.name ? req.body.name : foundItem.name;
         foundItem.description = req.body.description ? req.body.description : foundItem.description;
         foundItem.price = req.body.price ? req.body.price : foundItem.price;
+        foundItem.weight = req.body.weight ? req.body.weight : foundItem.weight;
+        foundItem.content = req.body.content ? req.body.content : foundItem.content;
+        foundItem.caffeine = req.body.caffeine ? req.body.caffeine : foundItem.caffeine;
+        foundItem.flavor = req.body.flavor ? req.body.flavor : foundItem.flavor;
+        foundItem.strength = req.body.strength ? req.body.strength : foundItem.strength;
+        foundItem.size = req.body.size ? req.body.size : foundItem.size;
         foundItem.save()
         .then(() => {
             res.json('Položka byla aktualizována!');
@@ -76,9 +97,9 @@ router.route('/update/:id').post((req, res) => {
     });
 });
 
-router.route('/enable/:id').post((req, res) => {
-    if (!auth.isManager(req.body.authToken)) {
-        res.json('Pro tento task je potřeba autorizace!');
+router.route('/enable/:id/:auth').put((req, res) => {
+    if (!auth.isManager(req.params.auth)) {
+        res.json('Pro tento task je potřeba oprávnění!');
         return;
     }
     Item.findById(req.params.id)
@@ -94,9 +115,9 @@ router.route('/enable/:id').post((req, res) => {
     });
 });
 
-router.route('/disable/:id').post((req, res) => {
-    if (!auth.isManager(req.body.authToken)) {
-        res.json('Pro tento task je potřeba autorizace!');
+router.route('/disable/:id/:auth').put((req, res) => {
+    if (!auth.isManager(req.params.auth)) {
+        res.json('Pro tento task je potřeba oprávnění!');
         return;
     }
     Item.findById(req.params.id)
@@ -112,9 +133,9 @@ router.route('/disable/:id').post((req, res) => {
     });
 });
 
-router.route('/amount/:id').post((req, res) => {
-    if (!auth.isManager(req.body.authToken)) {
-        res.json('Pro tento task je potřeba autorizace!');
+router.route('/amount/:id/:auth').put((req, res) => {
+    if (!auth.isManager(req.params.auth)) {
+        res.json('Pro tento task je potřeba oprávnění!');
         return;
     }
     Item.findById(req.params.id)
