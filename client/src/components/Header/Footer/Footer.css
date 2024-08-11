@@ -82,6 +82,7 @@
     height: 50px;
   }
   
+  
   footer {
     background-color: black;
     color: white;
@@ -89,5 +90,6 @@
     text-align: center;
     border-top: 0.0313rem solid gray;
   }
+
   
   

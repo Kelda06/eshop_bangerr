@@ -21,7 +21,7 @@ class Cart extends Component {
     }
 
     requestCartItems(){
-        axios.post("http://localhost:7070/order/detail", { authToken: cookies.get("authToken") })
+        axios.get("http://localhost:7070/order/detail/"+cookies.get("authToken"))
         .then(response => {
             if (Array.isArray(response.data)) {
                 this.setState({ cartItems: response.data });
@@ -34,7 +34,7 @@ class Cart extends Component {
 
     removeFromCart = (itemID) => {
         console.log(itemID)
-        axios.post(`http://localhost:7070/cart/delete`, { authToken: cookies.get("authToken"), itemID: itemID, amount:1 })
+        axios.put("http://localhost:7070/cart/delete/"+cookies.get("authToken"), {itemID: itemID, amount:1 })
             .then(response => {
                 console.log("Produkt byl úspěšně odebrán z košíku:", response.data);
                 this.requestCartItems();

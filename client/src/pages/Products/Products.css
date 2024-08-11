@@ -33,7 +33,7 @@
     opacity: 0.5;
   
 }
-#products .products1, .products2{
+#products .products1, .product{
     display: flex;
     justify-content: center;
     
@@ -43,8 +43,8 @@
 }
 
 
-@media screen and (max-width: 900px) {
-    #products .products1, .products2 {
+@media screen and (min-width: 900px) {
+    #products .product {
         display: flex;
         flex-direction: column; /* Bloky se budou umisťovat pod sebe */
         align-items: center; /* Zarovnání na střed podle osy X */

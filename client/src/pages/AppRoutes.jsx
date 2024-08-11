@@ -15,6 +15,8 @@ import ProductsPeach from "../components/Header/ProductsPeach/ProductsPeach"
 import ProductsGrape from "../components/Header/ProductsGrape/ProductsGrape";
 import Login from "./Login/Login";
 import Registration from "./Registration/Registration";
+import Product from "../components/Product/Product";
+import ProductView from "../components/ProductView/ProductView";
 
 
 
@@ -40,6 +42,9 @@ export default function AppRoutes() {
           <Route path="/productsGrape" element={<ProductsGrape />} />
           <Route path="/login" element={<Login />} />
           <Route path="/registration" element={<Registration />} />
+          <Route path="/product" element={<Product />} />
+          <Route path="/product/:id" element={<ProductView />} />
+          
           
 
         </Routes>

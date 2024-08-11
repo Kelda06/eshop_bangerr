@@ -32,6 +32,7 @@
 
 #contacts .spoluprace{
     margin-left: 4.375rem;
+    border: solid black;
 }
 
 
@@ -91,7 +92,9 @@
 }
 
 #contacts .company{
-    padding-top: 10%
+    margin-top: 40px;
+    margin-right: 10%;
+    margin-bottom: 100px;
 }
 
 #contacts .whatsapp-chat {

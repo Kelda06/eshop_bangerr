@@ -6,7 +6,7 @@ const cookies = new Cookies();
 
 export default function ProductsPeach() {
   const handleAddToCart = () => {
-    axios.post("http://localhost:7070/cart/add", { authToken: cookies.get("authToken"), itemID: "662d553a6d7d113551ecf466", amount:"1"})
+    axios.put("http://localhost:7070/cart/add", { authToken: cookies.get("authToken"), itemID: "66b769a61514e85156740a08", amount:"1"})
       .then(response => {
         console.log(cookies.get('authToken'));
         console.log("Položka byla úspěšně přidána do košíku:", response.data);
@@ -38,13 +38,14 @@ export default function ProductsPeach() {
                     <p>SKLADEM</p>
                   </strong>
                 </div>
+                <button onClick={handleAddToCart} type="button" className="CartButton">
+                  Do košíku
+                </button>
                 
               </div>
             </div>
           </Link>
-          <button onClick={handleAddToCart} type="button" className="CartButton">
-                  Do košíku
-                </button>
+          
         </div>
       </div>
     </>

@@ -1,53 +1,90 @@
-.product {
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px;
+@import url("https://fonts.googleapis.com/css2?family=Anta&family=Bitter&display=swap");
+
+
+
+#pr *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#pr .item-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#pr .products{
+    display: flex;
+    justify-content: center;
+}
+
+#pr .price{
+   text-align: left;
+   padding-left: 4.6875rem;
+   font-size: 2rem;
+   color: darkblue;
+}
+
+#pr .stav{
+    color: green;
+}
+
+#pr .p{
+    width: 18.75rem;
+    height: 18.75rem;
+    margin: 2.5rem;
+  
+}
+#pr .container{
+
+    margin: 2.5rem;
+    padding: 0;
+    height: 31.25rem;
+    justify-content: center;
+    border: 0.5px solid gray;
+    background-color: whitesmoke;
+    
+}
+
+#pr .container2{
+    display: flex;
+ 
+    
+    
+}
+
+#pr .container3{
+    width: 50%;
+}
+
+#pr .name{
     text-align: center;
-    max-width: 300px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.product-image {
-    width: 100%;
-    height: auto;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 15px;
-    margin-bottom: 15px;
-}
 
-.product-details {
-    padding: 10px 0;
-}
-
-.product-name {
-    font-size: 1.5em;
-    margin: 10px 0;
-}
-
-.product-description {
-    font-size: 1em;
-    color: #666;
-    margin: 10px 0;
-}
-
-.product-price {
-    font-size: 1.2em;
-    font-weight: bold;
-    margin: 10px 0;
-}
-
-.product-add-to-cart {
-    background-color: #28a745;
+#pr .CartButton {
+    background-color: green; 
+    border: none; 
     color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s;
-}
+    
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 1rem; 
+    
+    cursor: pointer; 
+    border-radius: 0.625rem;
+ }
 
-.product-add-to-cart:hover {
-    background-color: #218838;
-}
+#pr .cart {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20%;
+    padding-right: 20%;
+    
+    
+   
+    
+};
+

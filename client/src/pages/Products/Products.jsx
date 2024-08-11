@@ -4,6 +4,7 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Header/Footer/Footer";
 import ProductsPeach from "../../components/Header/ProductsPeach/ProductsPeach";
 import ProductsGrape from "../../components/Header/ProductsGrape/ProductsGrape";
+import Product from "../../components/Product/Product";
 
 
 export default function Products() {
@@ -31,35 +32,14 @@ export default function Products() {
      
       </div>
 
-      <div className="products1">
-        
+     
+    
 
-
-        <ProductsGrape></ProductsGrape>
-         
-
-        
-        
-
-
-
-          <ProductsPeach></ProductsPeach>
-        
-
-
-
-        
+      <div className="product">
+      <Product></Product>
       </div>
-      <div className="products2">
-
-        
-      <ProductsPeach> </ProductsPeach>
 
 
-      <ProductsPeach> </ProductsPeach>
-
-
-      </div>
 
       </div>
       <Footer></Footer>

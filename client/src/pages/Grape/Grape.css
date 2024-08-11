@@ -87,6 +87,7 @@
 #Peach .price{
    padding-top:4.375rem; 
    padding-right: 1.25rem;
+   white-space: nowrap;
    
  }
 

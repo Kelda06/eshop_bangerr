@@ -2,6 +2,9 @@ import { Link } from "react-router-dom";
 import "./Grape.css";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Header/Footer/Footer";
+import axios from "axios";
+import Cookies from 'universal-cookie';
+const cookies = new Cookies();
 
 export default function Grape() {
   const handleAddToCart = () => {

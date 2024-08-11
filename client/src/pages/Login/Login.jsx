@@ -16,7 +16,7 @@ export default function Login() {
         const email = event.target.email.value;
         const password = event.target.password.value;
     
-        axios.post('http://localhost:7070/user/login', { email, password })
+        axios.put('http://localhost:7070/user/login', { email, password })
             .then(response => {
                 console.log('Přihlášení úspěšné:', response.data);
                 
