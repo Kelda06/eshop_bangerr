@@ -5,21 +5,27 @@ let User = require('../models/user.model');
 let Order = require('../models/order.model');
 
 router.route('/:auth').get((req, res) => {
-    if (!auth.isManager(req.params.auth)) {
+    if (req.params.auth) {
+        auth.isManager(req.params.auth, permission => {
+            if (permission) {
+                User.find()
+                .then(users => {
+                    for (u = 0; u < users.length; u++) {
+                        users[u].password = "-";
+                        users[u].auth = "-";
+                    }
+                    res.json(users);
+                })
+                .catch(err => {
+                    res.status(400).json('Err: '+err)
+                });
+            } else {
+                res.json('Pro tento task je potřeba oprávnění!');
+            }
+        });
+    } else {
         res.json('Pro tento task je potřeba oprávnění!');
-        return;
     }
-    User.find()
-    .then(users => {
-        for (u = 0; u < users.length; u++) {
-            users[u].password = "-";
-            users[u].auth = "-";
-        }
-        res.json(users);
-    })
-    .catch(err => {
-        res.status(400).json('Err: '+err)
-    });
 });
 
 router.route('/register').post((req, res) => {
@@ -95,7 +101,7 @@ router.route('/login').put((req, res) => {
 
 
 router.route('/info/:auth').get((req, res) => {
-    if (req.body.authToken) {
+    if (req.params.auth) {
         auth.getUserID(req.params.auth, userID => {
             if (!userID) {
                 res.json('Je vyžadováno přihlášení!');
@@ -111,7 +117,7 @@ router.route('/info/:auth').get((req, res) => {
                 res.status(400).json('Err: '+err);
             });
         });
-    }
+    } else res.json('Je vyžadováno přihlášení!');
 });
 
 router.route('/deactivate/:auth').delete((req, res) => {

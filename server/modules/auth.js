@@ -50,14 +50,14 @@ function getUserID(authToken, callback) {
     })
 }
 
-async function isManager(authToken) {
-    await User.findOne({ auth: authToken })
+function isManager(authToken, callback) {
+    User.findOne({ auth: authToken })
     .then(foundUser => {
-        if (foundUser.role == "manager" || foundUser.role == "admin") return true;
-        else return false; 
+        if (foundUser.role == "manager" || foundUser.role == "admin") callback(true);
+        else callback(false); 
     }).catch(err => {
-        return false;
-    })
+        callback(false);
+    });
 }
 module.exports = {
     hashPassword,

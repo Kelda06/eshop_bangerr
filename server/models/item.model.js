@@ -10,10 +10,8 @@ const itemSchema = new Schema({
     content: { type: String, default: ''},
     caffeine: { type: Number, default: 0},
     flavor: { type: String, default: ''},
-    czflavor: {type: String, default: ''},
     strength: { type: Number, default: -1},
     size: { type: String, default: ''},
-    
     img: { type: String, default: '' },
     enabled: { type: Boolean, default: true }
 }, {
